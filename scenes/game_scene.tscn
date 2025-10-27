@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d00wv8c617jkq"]
+[gd_scene load_steps=6 format=3 uid="uid://c3dw622hbdcoc"]
 
 [ext_resource type="Script" uid="uid://bd4ibh4fabtci" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Script" uid="uid://bbqlr045k8se6" path="res://scripts/catalogue.gd" id="2_onqr8"]
@@ -10,8 +10,9 @@
 script = ExtResource("1_w5aja")
 
 [node name="catalogue" type="TextureButton" parent="."]
-offset_right = 1920.0
-offset_bottom = 1204.0
+offset_top = 673.0
+offset_right = 524.0
+offset_bottom = 1067.0
 texture_normal = ExtResource("2_y3j0m")
 texture_hover = ExtResource("3_rurhu")
 script = ExtResource("2_onqr8")
