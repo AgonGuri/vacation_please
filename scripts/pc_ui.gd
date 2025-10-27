@@ -30,13 +30,13 @@ func _ready():
 	#conditionsButton.pressed.connect(on_conditions_button_pressed)
 	nameContainer.visible = false
 	conditionContainer.visible = false
-	conditionsButton.visible = false
 
 func on_names_button_pressed():
 	namesButton.visible = false
 	conditionsButton.visible = false
 	conditions.visible = false
 	conditionContainer.visible = false
+	document.visible = false
 	nameContainer.visible = !nameContainer.visible
 	for customer in customer_resource:
 		var button = Button.new()

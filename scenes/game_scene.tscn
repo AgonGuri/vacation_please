@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxolwk8n0rwfo"]
+[gd_scene load_steps=6 format=3 uid="uid://d00wv8c617jkq"]
 
 [ext_resource type="Script" uid="uid://bd4ibh4fabtci" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="Script" uid="uid://bbqlr045k8se6" path="res://scripts/catalogue.gd" id="2_onqr8"]
-[ext_resource type="Texture2D" uid="uid://co4verei2hgtj" path="res://assets/interactable/catalog_1.png" id="2_y3j0m"]
-[ext_resource type="Texture2D" uid="uid://svr384p4hlgd" path="res://assets/interactable/catalog_2.png" id="3_rurhu"]
-[ext_resource type="Texture2D" uid="uid://udilxfegvtjs" path="res://assets/catalogue_stand_in.jpg" id="3_ycayy"]
+[ext_resource type="Texture2D" uid="uid://co4verei2hgtj" path="res://Assets/interactable/catalog_1.png" id="2_y3j0m"]
+[ext_resource type="Texture2D" uid="uid://svr384p4hlgd" path="res://Assets/interactable/catalog_2.png" id="3_rurhu"]
+[ext_resource type="Texture2D" uid="uid://udilxfegvtjs" path="res://Assets/catalogue_stand_in.jpg" id="3_ycayy"]
 
 [node name="game_scene" type="Node2D"]
 script = ExtResource("1_w5aja")

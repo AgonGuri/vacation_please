@@ -1,23 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://boepidkh0v6vi"]
+[gd_scene load_steps=2 format=3 uid="uid://boepidkh0v6vi"]
 
 [ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scripts/pc_ui.gd" id="1_gro16"]
-[ext_resource type="Texture2D" uid="uid://b8my5ra1jwicu" path="res://icon.svg" id="2_yj1s0"]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gro16")
 
 [node name="Information" type="Label" parent="."]
 layout_mode = 0
-offset_left = 195.0
-offset_top = 10.0
-offset_right = 591.0
-offset_bottom = 48.0
+offset_left = 196.0
+offset_top = 34.0
+offset_right = 592.0
+offset_bottom = 72.0
 text = "Information about our liers muahahah"
 
 [node name="NamesButton" type="Button" parent="."]
@@ -25,7 +25,7 @@ layout_mode = 0
 offset_left = 193.0
 offset_top = 69.0
 offset_right = 321.0
-offset_bottom = 197.0
+offset_bottom = 134.0
 text = "Names"
 
 [node name="NameList" type="VScrollBar" parent="."]
@@ -43,31 +43,32 @@ offset_top = 32.0
 offset_right = 428.0
 offset_bottom = 508.0
 
-[node name="ConditionsButton" type="TextureButton" parent="."]
+[node name="ConditionsButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 203.0
-offset_top = 350.0
-offset_right = 322.0
-offset_bottom = 477.0
-texture_normal = ExtResource("2_yj1s0")
+offset_left = 193.0
+offset_top = 144.0
+offset_right = 320.0
+offset_bottom = 212.0
+text = "Conditions"
 
 [node name="ConditionList" type="VScrollBar" parent="."]
 layout_mode = 0
 offset_left = 196.0
-offset_top = 63.0
-offset_right = 783.0
+offset_top = 71.0
+offset_right = 637.0
 offset_bottom = 589.0
 
 [node name="Conditions" type="VBoxContainer" parent="ConditionList"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 27.0
-offset_right = 423.0
-offset_bottom = 506.0
+offset_left = 10.0
+offset_top = 19.0
+offset_right = 415.0
+offset_bottom = 498.0
 
-[node name="DocumentButton" type="TextureButton" parent="."]
+[node name="DocumentButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 653.0
-offset_top = 453.0
-offset_right = 977.0
-offset_bottom = 581.0
+offset_left = 196.0
+offset_top = 279.0
+offset_right = 303.0
+offset_bottom = 330.0
+text = "Document"
