@@ -13,5 +13,8 @@ func _process(delta: float) -> void:
 func turnOffCanvas() -> void:
 	openCatalogue.visible = false
 
-func _pressed() -> void:
-	openCatalogue.visible = true
+func _toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		openCatalogue.visible = true
+	else:
+		openCatalogue.visible = false
