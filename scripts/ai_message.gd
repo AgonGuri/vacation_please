@@ -22,10 +22,8 @@ func _ready():
 	
 	await get_tree().process_frame
 	
-	
 	print("About to start talking")
 	ai_chat.say("start talking")
-
 
 
 func _on_nobody_who_chat_response_updated(new_token: String) -> void:
