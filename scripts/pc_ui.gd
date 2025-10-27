@@ -34,7 +34,6 @@ func _ready():
 		#preload("res://scripts/customers/3.tres"),
 		#preload("res://scripts/customers/4.tres"),
 	#]
-	
 	var dir := DirAccess.open("res://scripts/customers")
 	if dir:
 		dir.list_dir_begin()
@@ -67,12 +66,12 @@ func on_names_button_pressed():
 	document.visible = false
 	buttonBack.visible = true
 	nameContainer.visible = !nameContainer.visible
-	for customer in customer_resource:
-		var button = Button.new()
-		var insured_text = "yes" if customer.insured else "no"
-		button.text = "%s, insured: %s" % [customer.name, insured_text]
-		button.pressed.connect(Callable(self, "customer_button_click").bind(customer))
-		animals.add_child(button)
+	#for customer in customer_resource:
+		#var button = Button.new()
+		#var insured_text = "yes" if customer.insured else "no"
+		#button.text = "%s, insured: %s" % [customer.name, insured_text]
+		#button.pressed.connect(Callable(self, "customer_button_click").bind(customer))
+		#animals.add_child(button)
 		
 #func on_conditions_button_pressed():
 	#namesButton.visible = false
