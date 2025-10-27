@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_48ace")
-name = "kris"
-condition = "evil"
-price = 50000
+name = "Millie Pede"
+condition = "broken leg"
+price = 1500
 insured = true
-lie = "impossible to be a lie"
+lie = "Condition"
 metadata/_custom_type_script = "uid://gekfvna5qo3b"
