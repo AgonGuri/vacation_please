@@ -5,6 +5,8 @@ extends Node
 var client_dict = {}
 var scene
 
+var currency = 0
+
 func _ready():
 	load_and_randomize_clients()
 	new_customer()
