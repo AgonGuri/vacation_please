@@ -1,0 +1,29 @@
+[gd_scene load_steps=0 format=3 uid="uid://cfy5c3hbdy03k"]
+
+[node name="PcUi" type="Node2D"]
+
+[node name="MainUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameList" type="VBoxContainer" parent="MainUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Conditions" type="VBoxContainer" parent="MainUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Form" type="TextureButton" parent="MainUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Information" type="Label" parent="MainUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
