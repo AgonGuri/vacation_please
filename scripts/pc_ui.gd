@@ -20,44 +20,40 @@ var customer_resource: Array[CustomerResource] = []
 @onready var conditionsButton = $NinePatchRect/Panel/ConditionsButton
 @onready var document_panel = $NinePatchRect/DocumentPanel
 @onready var customer_name= $NinePatchRect/DocumentPanel/CustomerName
-@onready var customer_condition = $NinePatchRect/DocumentPanel/CustomerCondition
-@onready var customer_price = $NinePatchRect/DocumentPanel/CustomerPrice
+@onready var customer_insurance_status = $NinePatchRect/DocumentPanel/CustomerInsuranceStatus
+@onready var customer_species = $NinePatchRect/DocumentPanel/CustomerSpecies
 @onready var money_input = $NinePatchRect/DocumentPanel/MoneyInput
 @onready var done_button = $NinePatchRect/DocumentPanel/DoneButton
 @onready var buttonBack = $NinePatchRect/Button
 
 func _ready():
 	size = Vector2(694, 677)
-	#customer_resource = [
-		#preload("res://scripts/customers/1.tres"),
-		#preload("res://scripts/customers/2.tres"),
-		#preload("res://scripts/customers/3.tres"),
-		#preload("res://scripts/customers/4.tres"),
-	#]
-	var dir := DirAccess.open("res://scripts/customers")
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if file_name.ends_with(".tres"):
-				var path = "res://scripts/customers/" + file_name
-				var resource = load(path)
-				if resource is CustomerResource:
-					customer_resource.append(resource)
-			file_name = dir.get_next()
-		dir.list_dir_end()
-	else:
-		push_error("Could not open customer folder!")
-	
+
+	populate_customer_text()
+	homescreen()
 	done_button.pressed.connect(on_done_button_pressed)
 	namesButton.pressed.connect(on_names_button_pressed)
 	buttonBack.pressed.connect(on_back_button_pressed)
 	#conditionsButton.pressed.connect(on_conditions_button_pressed)
+
+func homescreen():
 	nameContainer.visible = false
 	conditionContainer.visible = false
 	document_panel.visible = false
 	buttonBack.visible = false
-
+	namesButton.visible = true
+	conditionsButton.visible = true
+	
+func populate_customer_text():
+	var customers = Global.get_all_customers()
+	var text = ""
+	for customer in customers:
+		var button = Button.new()
+		var insured_text = "yes" if customer.insured else "no"
+		button.text = "%s, insured: %s" % [customer.name, insured_text]
+		button.pressed.connect(Callable(self, "customer_button_click").bind(customer))
+		animals.add_child(button)
+		
 func on_names_button_pressed():
 	namesButton.visible = false
 	conditionsButton.visible = false
@@ -66,13 +62,8 @@ func on_names_button_pressed():
 	document.visible = false
 	buttonBack.visible = true
 	nameContainer.visible = !nameContainer.visible
-	#for customer in customer_resource:
-		#var button = Button.new()
-		#var insured_text = "yes" if customer.insured else "no"
-		#button.text = "%s, insured: %s" % [customer.name, insured_text]
-		#button.pressed.connect(Callable(self, "customer_button_click").bind(customer))
-		#animals.add_child(button)
-		
+	
+
 #func on_conditions_button_pressed():
 	#namesButton.visible = false
 	#conditionsButton.visible = false
@@ -98,15 +89,15 @@ func show_document(customer: CustomerResource):
 	conditionContainer.visible = false
 	document_panel.visible = true
 	customer_name.text = "Name: %s" % customer.name
-	customer_condition.text = "Condition: %s" % customer.condition
-	customer_price.text = "Price: $%d" % customer.price 
+	customer_species.text = "Species: %s" % customer.species
+	customer_insurance_status.text = "Has insurance: %s" % customer.insured
 	
-	money_input.text = "" # Clear input
-	#//done_button.pressed.disconnect_all()
+	money_input.text = "Money you give them" # Clear input
+	##//done_button.pressed.disconnect_all()
 	
 func on_back_button_pressed():
 	#change plis
-	get_tree().change_scene_to_file("res://scenes/pc_ui.tscn")
+	homescreen()
 	
 func on_done_button_pressed():
 	document_panel.visible = false

@@ -67,6 +67,7 @@ border_color = Color(0.32172796, 0.321728, 0.32172775, 1)
 [node name="MainUI" type="Control"]
 custom_minimum_size = Vector2(694, 677)
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1226.0
@@ -121,23 +122,23 @@ offset_bottom = 50.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Name:"
 
-[node name="CustomerCondition" type="Label" parent="NinePatchRect/DocumentPanel"]
+[node name="CustomerInsuranceStatus" type="Label" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 56.0
-offset_right = 151.0
-offset_bottom = 79.0
+offset_left = 17.0
+offset_top = 84.0
+offset_right = 150.0
+offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Why they nerfed:"
+text = "Has insurance:"
 
-[node name="CustomerPrice" type="Label" parent="NinePatchRect/DocumentPanel"]
+[node name="CustomerSpecies" type="Label" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 116.0
-offset_right = 241.0
-offset_bottom = 139.0
+offset_left = 17.0
+offset_top = 55.0
+offset_right = 243.0
+offset_bottom = 78.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "How much money they want:"
+text = "Species:"
 
 [node name="MoneyInput" type="LineEdit" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
@@ -179,6 +180,8 @@ theme_override_styles/scroll = SubResource("StyleBoxFlat_g1cg7")
 
 [node name="Names" type="VBoxContainer" parent="NinePatchRect/Panel/NameList"]
 layout_mode = 0
+offset_right = 8.0
+offset_bottom = 23.0
 
 [node name="ConditionList" type="VScrollBar" parent="NinePatchRect/Panel"]
 layout_mode = 0
