@@ -91,6 +91,7 @@ func show_document(customer: CustomerResource):
 	#//done_button.pressed.disconnect_all()
 	
 func on_back_button_pressed():
+	#change plis
 	get_tree().change_scene_to_file("res://scenes/pc_ui.tscn")
 	
 func on_done_button_pressed():

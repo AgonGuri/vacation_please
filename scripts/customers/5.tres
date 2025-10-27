@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://dkh2428godg0k"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://m3t7knhebpfw"]
 
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_gjtd4"]
 [ext_resource type="Texture2D" uid="uid://dmntefo3xvve2" path="res://Assets/animalsprites/doh.png" id="1_wscwr"]
