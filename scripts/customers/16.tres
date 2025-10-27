@@ -10,7 +10,6 @@ species = "mole"
 portrait = ExtResource("1_jllbb")
 condition = "Nasal recorrection"
 price = 6000
-max_payout = 3700
 insured = true
 is_lying = true
 lie = "Price"

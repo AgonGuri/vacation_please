@@ -10,6 +10,5 @@ species = "milipede"
 portrait = ExtResource("1_yexls")
 condition = "Phsychotherapy concerning sexual issues"
 price = 18000
-max_payout = 50
 insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

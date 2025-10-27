@@ -10,7 +10,6 @@ species = "snake"
 portrait = ExtResource("1_aeg6y")
 condition = "Borelliosis"
 price = 670
-max_payout = 750
 insured = true
 is_lying = true
 lie = "Name"

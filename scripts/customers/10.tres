@@ -10,7 +10,6 @@ species = "cat"
 portrait = ExtResource("1_bfbi2")
 condition = "broken tail"
 price = 2080
-max_payout = 1000
 insured = true
 is_lying = true
 lie = "Condition"

@@ -10,7 +10,6 @@ species = "crow"
 portrait = ExtResource("1_3i5y8")
 condition = "hyposensibilisation against wasp venom"
 price = 8600
-max_payout = 10000
 is_lying = true
 lie = "Insured"
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

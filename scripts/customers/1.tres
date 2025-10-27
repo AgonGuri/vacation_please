@@ -10,7 +10,6 @@ species = "millipede"
 portrait = ExtResource("1_njxdw")
 condition = "broken leg"
 price = 1500
-max_payout = 1000
 insured = true
 is_lying = true
 lie = "Price"

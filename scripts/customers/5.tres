@@ -10,6 +10,5 @@ species = "dog"
 portrait = ExtResource("1_wscwr")
 condition = "Borelliosis"
 price = 670
-max_payout = 750
 insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

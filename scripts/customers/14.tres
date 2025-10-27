@@ -10,6 +10,5 @@ species = "elephant"
 portrait = ExtResource("1_d5bt0")
 condition = "Schizophrenic Paranoia & Dissociative Identity Disorder"
 price = 10500
-max_payout = 50
 insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

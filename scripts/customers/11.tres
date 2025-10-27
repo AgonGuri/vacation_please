@@ -10,7 +10,6 @@ species = "cat"
 portrait = ExtResource("1_2rfeu")
 condition = "Eye Surgery"
 price = 4950
-max_payout = 5000
 insured = true
 is_lying = true
 lie = "Condition"
