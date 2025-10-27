@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://eit7se8d80x7"]
+
+[ext_resource type="Texture2D" uid="uid://dyk2ghtfxk8tq" path="res://Assets/animalsprites/cat.png" id="1_2rfeu"]
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_mod1g"]
+
+[resource]
+script = ExtResource("1_mod1g")
+species = "cat"
+portrait = ExtResource("1_2rfeu")
+metadata/_custom_type_script = "uid://gekfvna5qo3b"

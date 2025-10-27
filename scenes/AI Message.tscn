@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://x04aqnm4cxq"]
+[gd_scene load_steps=3 format=3 uid="uid://cyt0jojmmsx7r"]
 
-[ext_resource type="Script" uid="uid://ul4ux3nol22e" path="res://scripts/ai_message.gd" id="1_4aiux"]
+[ext_resource type="Script" path="res://scripts/ai_message.gd" id="1_4aiux"]
 
 [sub_resource type="NobodyWhoSampler" id="NobodyWhoSampler_4aiux"]
 
