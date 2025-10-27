@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://cfpk5j8k1ga5"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://d73d6w7cpbwf"]
 
 [ext_resource type="Texture2D" uid="uid://b2wc1moikl6nm" path="res://Assets/animalsprites/snake.png" id="1_7xmxd"]
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_8prgp"]
@@ -10,5 +10,4 @@ species = "snake"
 portrait = ExtResource("1_7xmxd")
 condition = "Breast Implants"
 price = 3595
-insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

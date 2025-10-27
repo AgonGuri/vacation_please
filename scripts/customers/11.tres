@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://eit7se8d80x7"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://bfet8mv5v85hc"]
 
 [ext_resource type="Texture2D" uid="uid://dyk2ghtfxk8tq" path="res://Assets/animalsprites/cat.png" id="1_2rfeu"]
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_mod1g"]
 
 [resource]
 script = ExtResource("1_mod1g")
+name = "Catherine Catricia"
 species = "cat"
 portrait = ExtResource("1_2rfeu")
+condition = "Eye Surgery"
+price = 4950
+insured = true
+is_lying = true
+lie = "Condition"
 metadata/_custom_type_script = "uid://gekfvna5qo3b"
