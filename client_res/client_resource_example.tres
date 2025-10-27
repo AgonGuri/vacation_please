@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=2 format=3 uid="uid://dqnesgqkehx8k"]
+
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_p16ik"]
+
+[resource]
+script = ExtResource("1_p16ik")
+name = "Milipiede"
+condition = "One leg not working"
+price = 50000
+metadata/_custom_type_script = "uid://gekfvna5qo3b"

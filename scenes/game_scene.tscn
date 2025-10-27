@@ -1,29 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3dw622hbdcoc"]
+[gd_scene load_steps=6 format=3 uid="uid://d00wv8c617jkq"]
 
 [ext_resource type="Script" uid="uid://bd4ibh4fabtci" path="res://scripts/game_scene.gd" id="1_w5aja"]
-[ext_resource type="Texture2D" uid="uid://dre26otq0evjt" path="res://Assets/catalog-cover-standin.jpg" id="2_bw6k5"]
 [ext_resource type="Script" uid="uid://bbqlr045k8se6" path="res://scripts/catalogue.gd" id="2_onqr8"]
-[ext_resource type="Texture2D" uid="uid://bkr2trsd3c7th" path="res://Assets/catalog-cover-standin-hover.jpg" id="3_y3j0m"]
+[ext_resource type="Texture2D" uid="uid://co4verei2hgtj" path="res://Assets/interactable/catalog_1.png" id="2_y3j0m"]
+[ext_resource type="Texture2D" uid="uid://svr384p4hlgd" path="res://Assets/interactable/catalog_2.png" id="3_rurhu"]
 [ext_resource type="Texture2D" uid="uid://udilxfegvtjs" path="res://Assets/catalogue_stand_in.jpg" id="3_ycayy"]
 
 [node name="game_scene" type="Node2D"]
 script = ExtResource("1_w5aja")
 
 [node name="catalogue" type="TextureButton" parent="."]
-offset_left = 71.0
-offset_top = 381.0
-offset_right = 1001.0
-offset_bottom = 1585.0
-rotation = -0.5235988
-scale = Vector2(0.13706383, 0.13180342)
-toggle_mode = true
-texture_normal = ExtResource("2_bw6k5")
-texture_hover = ExtResource("3_y3j0m")
+offset_right = 1920.0
+offset_bottom = 1204.0
+texture_normal = ExtResource("2_y3j0m")
+texture_hover = ExtResource("3_rurhu")
 script = ExtResource("2_onqr8")
 
 [node name="openCatalogue" type="Sprite2D" parent="catalogue"]
 visible = false
 position = Vector2(544.4768, 64.93857)
-rotation = 0.5235988
-scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_ycayy")
