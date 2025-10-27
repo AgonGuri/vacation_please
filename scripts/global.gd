@@ -3,6 +3,7 @@ extends Node
 @export var current_customer = 0
 @export var last_customer = 12
 var client_dict = {}
+var clean_dict = {}
 var scene
 
 var currency = 0
@@ -31,6 +32,9 @@ func load_and_randomize_clients():
 		dir.list_dir_end()
 	else:
 		print("Failed to open directory: ", folder_path)
+	
+	for i in range(clients.size()):
+		clean_dict[i] = clients[i]
 	
 	# Randomize the order
 	clients.shuffle()
