@@ -10,20 +10,21 @@ extends Control
 #var conditions_list = ["broken nose", "dirrahea", "eye infection", "uncotrollable laughing"]
 var customer_resource: Array[CustomerResource] = []
 
-@onready var animals = $NameList/Names
-@onready var namesButton = $NamesButton
-@onready var nameContainer = $NameList
-@onready var conditions = $ConditionList/Conditions
-@onready var conditionContainer = $ConditionList
-@onready var information = $Information
-@onready var document = $DocumentButton
-@onready var conditionsButton = $ConditionsButton
-@onready var document_panel = $DocumentPanel
-@onready var customer_name= $DocumentPanel/CustomerName
-@onready var customer_condition = $DocumentPanel/CustomerCondition
-@onready var customer_price = $DocumentPanel/CustomerPrice
-@onready var money_input = $DocumentPanel/MoneyInput
-@onready var done_button = $DocumentPanel/DoneButton
+@onready var animals = $NinePatchRect/Panel/NameList/Names
+@onready var namesButton = $NinePatchRect/Panel/NamesButton
+@onready var nameContainer = $NinePatchRect/Panel/NameList
+@onready var conditions = $NinePatchRect/Panel/ConditionList/Conditions
+@onready var conditionContainer = $NinePatchRect/Panel/ConditionList
+@onready var information = $NinePatchRect/Information
+@onready var document = $NinePatchRect/DocumentButton
+@onready var conditionsButton = $NinePatchRect/Panel/ConditionsButton
+@onready var document_panel = $NinePatchRect/DocumentPanel
+@onready var customer_name= $NinePatchRect/DocumentPanel/CustomerName
+@onready var customer_condition = $NinePatchRect/DocumentPanel/CustomerCondition
+@onready var customer_price = $NinePatchRect/DocumentPanel/CustomerPrice
+@onready var money_input = $NinePatchRect/DocumentPanel/MoneyInput
+@onready var done_button = $NinePatchRect/DocumentPanel/DoneButton
+@onready var buttonBack = $NinePatchRect/Button
 
 func _ready():
 	customer_resource = [
@@ -32,12 +33,14 @@ func _ready():
 		preload("res://scripts/customers/3.tres")
 	]
 	
+	done_button.pressed.connect(on_done_button_pressed)
 	namesButton.pressed.connect(on_names_button_pressed)
-	
+	buttonBack.pressed.connect(on_back_button_pressed)
 	#conditionsButton.pressed.connect(on_conditions_button_pressed)
 	nameContainer.visible = false
 	conditionContainer.visible = false
 	document_panel.visible = false
+	buttonBack.visible = false
 
 func on_names_button_pressed():
 	namesButton.visible = false
@@ -45,6 +48,7 @@ func on_names_button_pressed():
 	conditions.visible = false
 	conditionContainer.visible = false
 	document.visible = false
+	buttonBack.visible = true
 	nameContainer.visible = !nameContainer.visible
 	for customer in customer_resource:
 		var button = Button.new()
@@ -68,14 +72,12 @@ func on_names_button_pressed():
 		##//meContainer.scroll_vertical = 0
 
 func customer_button_click(customer: CustomerResource):
-		information.text = "Condition: %s" % customer.condition
 		document.visible = true
-		#document.pressed.disconnect_all
+		
 		document.pressed.connect(Callable(self, "show_document").bind(customer))
 		
 func show_document(customer: CustomerResource):
 	document.visible = false
-	nameContainer.visible = false
 	conditionContainer.visible = false
 	document_panel.visible = true
 	customer_name.text = "Name: %s" % customer.name
@@ -84,4 +86,9 @@ func show_document(customer: CustomerResource):
 	
 	money_input.text = "" # Clear input
 	#//done_button.pressed.disconnect_all()
-	done_button.pressed.connect(Callable(self, "on_done_pressed").bind(customer))
+	
+func on_back_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/pc_ui.tscn")
+	
+func on_done_button_pressed():
+	document_panel.visible = false
