@@ -5,9 +5,10 @@
 
 [resource]
 script = ExtResource("1_ei7qp")
-name = "Esther Mole"
+name = "Esther Mol"
+species = "mole"
+portrait = ExtResource("1_acl37")
 condition = "cataract"
 price = 6495
-portrait = ExtResource("1_acl37")
 insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

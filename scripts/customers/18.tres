@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://dggg74ub6vl0c"]
+
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_yc1h8"]
+[ext_resource type="Texture2D" uid="uid://2muko46t1v4p" path="res://Assets/animalsprites/star.png" id="1_yhy58"]
+
+[resource]
+script = ExtResource("1_yc1h8")
+name = "Patricia Hoshi"
+species = "starfish"
+portrait = ExtResource("1_yhy58")
+condition = "caring for her mentally disabled brother"
+price = 30345
+insured = true
+metadata/_custom_type_script = "uid://gekfvna5qo3b"

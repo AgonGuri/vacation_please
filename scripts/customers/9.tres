@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://d3i31vcgvv48n"]
+
+[ext_resource type="Texture2D" uid="uid://2muko46t1v4p" path="res://Assets/animalsprites/star.png" id="1_fisi5"]
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_heukj"]
+
+[resource]
+script = ExtResource("1_heukj")
+name = "Patrick"
+species = "starfish"
+portrait = ExtResource("1_fisi5")
+condition = "smol smart"
+price = -100
+is_lying = true
+lie = "species"
+metadata/_custom_type_script = "uid://gekfvna5qo3b"

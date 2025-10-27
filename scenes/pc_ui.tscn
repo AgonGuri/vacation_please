@@ -1,10 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfy5c3hbdy03k"]
+[gd_scene load_steps=11 format=3 uid="uid://boepidkh0v6vi"]
 
 [ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scripts/pc_ui.gd" id="1_gro16"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gro16"]
+bg_color = Color(0.87058824, 0.8862745, 0.9019608, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj1s0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df1xv"]
+bg_color = Color(1, 1, 1, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1cg7"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7g8x"]
+bg_color = Color(1, 1, 1, 1)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.33288068, 0.33288074, 0.33288044, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixibr"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5571c"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ognbo"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gthla"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.32172796, 0.321728, 0.32172775, 1)
+
 [node name="MainUI" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 1.0
@@ -13,112 +58,162 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gro16")
 
-[node name="Information" type="Label" parent="."]
+[node name="NinePatchRect" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 196.0
-offset_top = 34.0
-offset_right = 592.0
-offset_bottom = 72.0
-text = "Information about our liers muahahah"
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 1920.0
+offset_bottom = 1078.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gro16")
 
-[node name="NamesButton" type="Button" parent="."]
+[node name="Information" type="Label" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 193.0
-offset_top = 69.0
-offset_right = 321.0
-offset_bottom = 134.0
-text = "Names"
+offset_left = 61.0
+offset_top = 171.0
+offset_right = 457.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 21
+text = "XP User Interface [information about customers]"
 
-[node name="NameList" type="VScrollBar" parent="."]
-modulate = Color(0.79607844, 1, 1, 1)
+[node name="DocumentButton" type="Button" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 194.0
-offset_top = 66.0
-offset_right = 639.0
-offset_bottom = 583.0
-
-[node name="Names" type="VBoxContainer" parent="NameList"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 32.0
-offset_right = 428.0
-offset_bottom = 508.0
-
-[node name="ConditionsButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 193.0
-offset_top = 144.0
-offset_right = 320.0
-offset_bottom = 212.0
-text = "Conditions"
-
-[node name="ConditionList" type="VScrollBar" parent="."]
-layout_mode = 0
-offset_left = 196.0
-offset_top = 71.0
-offset_right = 637.0
-offset_bottom = 589.0
-
-[node name="Conditions" type="VBoxContainer" parent="ConditionList"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 19.0
-offset_right = 415.0
-offset_bottom = 498.0
-
-[node name="DocumentButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 683.0
-offset_top = 69.0
-offset_right = 790.0
-offset_bottom = 120.0
+offset_left = 1303.0
+offset_top = 970.0
+offset_right = 1410.0
+offset_bottom = 1021.0
 text = "Document"
 
-[node name="DocumentPanel" type="Panel" parent="."]
-visible = false
+[node name="DocumentPanel" type="Panel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 207.0
-offset_top = 91.0
-offset_right = 761.0
-offset_bottom = 699.0
+offset_left = 1301.0
+offset_top = 223.0
+offset_right = 1860.0
+offset_bottom = 1031.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yj1s0")
 
-[node name="CustomerName" type="Label" parent="DocumentPanel"]
+[node name="CustomerName" type="Label" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 86.0
 offset_right = 87.0
 offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Name"
 
-[node name="CustomerCondition" type="Label" parent="DocumentPanel"]
+[node name="CustomerCondition" type="Label" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 135.0
 offset_right = 176.0
 offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Why they nerfed:"
 
-[node name="CustomerPrice" type="Label" parent="DocumentPanel"]
+[node name="CustomerPrice" type="Label" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 183.0
 offset_right = 268.0
 offset_bottom = 206.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "How much money they want:"
 
-[node name="MoneyInput" type="LineEdit" parent="DocumentPanel"]
+[node name="MoneyInput" type="LineEdit" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
 offset_left = 37.0
 offset_top = 237.0
 offset_right = 451.0
 offset_bottom = 280.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
 text = "How much you give them"
 placeholder_text = "amount"
 
-[node name="DoneButton" type="Button" parent="DocumentPanel"]
+[node name="DoneButton" type="Button" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
 offset_left = 435.0
 offset_top = 508.0
 offset_right = 512.0
 offset_bottom = 566.0
 text = "Done"
+
+[node name="Panel" type="Panel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 222.0
+offset_right = 1283.0
+offset_bottom = 1033.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_df1xv")
+
+[node name="NameList" type="VScrollBar" parent="NinePatchRect/Panel"]
+modulate = Color(0.79607844, 1, 1, 1)
+layout_mode = 0
+offset_left = -3.0
+offset_top = 2.0
+offset_right = 1222.0
+offset_bottom = 810.0
+theme_override_styles/scroll = SubResource("StyleBoxFlat_g1cg7")
+
+[node name="Names" type="VBoxContainer" parent="NinePatchRect/Panel/NameList"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 1222.0
+offset_bottom = 810.0
+
+[node name="ConditionList" type="VScrollBar" parent="NinePatchRect/Panel"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 1.0
+offset_right = 1221.0
+offset_bottom = 813.0
+theme_override_styles/scroll = SubResource("StyleBoxFlat_h7g8x")
+
+[node name="Conditions" type="VBoxContainer" parent="NinePatchRect/Panel/ConditionList"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 1225.0
+offset_bottom = 813.0
+
+[node name="ConditionsButton" type="Button" parent="NinePatchRect/Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 62.0
+offset_right = 1209.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.068798125, 0.06879836, 0.06879819, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ixibr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5571c")
+text = "Conditions"
+alignment = 0
+
+[node name="NamesButton" type="Button" parent="NinePatchRect/Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 16.0
+offset_right = 1208.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ognbo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ognbo")
+text = "Names"
+alignment = 0
+
+[node name="Button" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 122.0
+offset_right = 154.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_gthla")
+text = "Go Back"
