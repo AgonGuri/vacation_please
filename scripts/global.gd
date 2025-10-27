@@ -3,9 +3,11 @@ extends Node
 @export var current_customer = 0
 @export var last_customer = 12
 var client_dict = {}
+var scene
 
 func _ready():
 	load_and_randomize_clients()
+	new_customer()
 	
 func load_and_randomize_clients():
 	var folder_path = "res://scripts/customers/"  # Change this to your folder
@@ -46,10 +48,10 @@ func new_customer():
 		
 	
 func start_customer(customer):
-	#client_dict[customer]
+	print(client_dict[customer].name)
 	#play animation and sound
 	#Load UI with relevant information
-	
+	#Load corresponding LLM Text
 	pass
 
 func end_game():

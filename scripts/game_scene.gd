@@ -5,6 +5,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var instance = load("res://scenes/AI Message.tscn").instantiate()
+	add_child(instance)
 	pass # Replace with function body.
 
 
