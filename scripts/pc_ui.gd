@@ -28,12 +28,27 @@ var customer_resource: Array[CustomerResource] = []
 
 func _ready():
 	size = Vector2(694, 677)
-	customer_resource = [
-		preload("res://scripts/customers/1.tres"),
-		preload("res://scripts/customers/2.tres"),
-		preload("res://scripts/customers/3.tres"),
-		preload("res://scripts/customers/4.tres"),
-	]
+	#customer_resource = [
+		#preload("res://scripts/customers/1.tres"),
+		#preload("res://scripts/customers/2.tres"),
+		#preload("res://scripts/customers/3.tres"),
+		#preload("res://scripts/customers/4.tres"),
+	#]
+	
+	var dir := DirAccess.open("res://scripts/customers")
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if file_name.ends_with(".tres"):
+				var path = "res://scripts/customers/" + file_name
+				var resource = load(path)
+				if resource is CustomerResource:
+					customer_resource.append(resource)
+			file_name = dir.get_next()
+		dir.list_dir_end()
+	else:
+		push_error("Could not open customer folder!")
 	
 	done_button.pressed.connect(on_done_button_pressed)
 	namesButton.pressed.connect(on_names_button_pressed)

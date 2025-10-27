@@ -179,6 +179,9 @@ theme_override_styles/scroll = SubResource("StyleBoxFlat_g1cg7")
 
 [node name="Names" type="VBoxContainer" parent="NinePatchRect/Panel/NameList"]
 layout_mode = 0
+offset_left = 1.0
+offset_right = 329.0
+offset_bottom = 487.0
 
 [node name="ConditionList" type="VScrollBar" parent="NinePatchRect/Panel"]
 layout_mode = 0
