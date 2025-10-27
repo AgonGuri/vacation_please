@@ -14,6 +14,5 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	#turn off the catalogue if it is open
-	if catalogue.toggled:
-		if event.is_pressed():
-			catalogue._toggled(false)
+	if catalogue.openCatalogue.visible == true && event.is_pressed():
+		catalogue.closeCanvas()

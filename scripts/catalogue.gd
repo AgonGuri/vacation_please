@@ -10,11 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func turnOffCanvas() -> void:
+func closeCanvas() -> void:
 	openCatalogue.visible = false
+	button_pressed = false
 
-func _toggled(toggled_on: bool) -> void:
-	if toggled_on:
+func _pressed() -> void:
 		openCatalogue.visible = true
-	else:
-		openCatalogue.visible = false
