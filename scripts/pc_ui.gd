@@ -18,6 +18,12 @@ var customer_resource: Array[CustomerResource] = []
 @onready var information = $Information
 @onready var document = $DocumentButton
 @onready var conditionsButton = $ConditionsButton
+@onready var document_panel = $DocumentPanel
+@onready var customer_name= $DocumentPanel/CustomerName
+@onready var customer_condition = $DocumentPanel/CustomerCondition
+@onready var customer_price = $DocumentPanel/CustomerPrice
+@onready var money_input = $DocumentPanel/MoneyInput
+@onready var done_button = $DocumentPanel/DoneButton
 
 func _ready():
 	customer_resource = [
@@ -27,9 +33,11 @@ func _ready():
 	]
 	
 	namesButton.pressed.connect(on_names_button_pressed)
+	
 	#conditionsButton.pressed.connect(on_conditions_button_pressed)
 	nameContainer.visible = false
 	conditionContainer.visible = false
+	document_panel.visible = false
 
 func on_names_button_pressed():
 	namesButton.visible = false
@@ -61,3 +69,19 @@ func on_names_button_pressed():
 
 func customer_button_click(customer: CustomerResource):
 		information.text = "Condition: %s" % customer.condition
+		document.visible = true
+		#document.pressed.disconnect_all
+		document.pressed.connect(Callable(self, "show_document").bind(customer))
+		
+func show_document(customer: CustomerResource):
+	document.visible = false
+	nameContainer.visible = false
+	conditionContainer.visible = false
+	document_panel.visible = true
+	customer_name.text = "Name: %s" % customer.name
+	customer_condition.text = "Condition: %s" % customer.condition
+	customer_price.text = "Price: $%d" % customer.price 
+	
+	money_input.text = "" # Clear input
+	#//done_button.pressed.disconnect_all()
+	done_button.pressed.connect(Callable(self, "on_done_pressed").bind(customer))
