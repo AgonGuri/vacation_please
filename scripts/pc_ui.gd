@@ -27,10 +27,12 @@ var customer_resource: Array[CustomerResource] = []
 @onready var buttonBack = $NinePatchRect/Button
 
 func _ready():
+	size = Vector2(694, 677)
 	customer_resource = [
 		preload("res://scripts/customers/1.tres"),
 		preload("res://scripts/customers/2.tres"),
-		preload("res://scripts/customers/3.tres")
+		preload("res://scripts/customers/3.tres"),
+		preload("res://scripts/customers/4.tres"),
 	]
 	
 	done_button.pressed.connect(on_done_button_pressed)
