@@ -4,9 +4,8 @@
 
 [resource]
 script = ExtResource("1_ei7qp")
-name = "agon"
-condition = "diarrhea"
-price = 233
+name = "Esther Mole"
+condition = "cataract"
+price = 6495
 insured = true
-lie = "na. he is a shittypants"
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

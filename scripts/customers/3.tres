@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_u80nh")
-name = "patrick"
+name = "dog"
 condition = "back pain from having to carry them gigantic balls all the time"
 price = 60
 lie = "hm"
