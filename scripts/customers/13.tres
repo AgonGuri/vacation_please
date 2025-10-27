@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://dlahr4mftrc8f"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://srao66gjqowb"]
 
 [ext_resource type="Texture2D" uid="uid://dok3ibl3t07pe" path="res://Assets/animalsprites/worm.png" id="1_o0b2y"]
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_o57r3"]
