@@ -27,7 +27,7 @@ texture_normal = ExtResource("2_vjpme")
 texture_hover = ExtResource("3_4jnhx")
 script = ExtResource("5_f6vs1")
 
-[node name="catalogueOpen" type="Sprite2D" parent="catalogue"]
+[node name="openCatalogue" type="Sprite2D" parent="catalogue"]
 visible = false
 position = Vector2(936, -113)
 texture = ExtResource("4_4jnhx")
