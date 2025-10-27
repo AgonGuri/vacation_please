@@ -1,13 +1,16 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=2 format=3 uid="uid://nmj5dyljxfuv"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://nmj5dyljxfuv"]
 
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_48ace"]
+[ext_resource type="Texture2D" uid="uid://dl5ywb7k15a3v" path="res://Assets/animalsprites/millipede.png" id="1_njxdw"]
 
 [resource]
 script = ExtResource("1_48ace")
-name = "kris"
-species = "human"
-condition = "evil"
-price = 50000
+name = "Millie Pede"
+species = "millipede"
+portrait = ExtResource("1_njxdw")
+condition = "broken leg"
+price = 1500
 insured = true
-lie = "impossible to be a lie"
+is_lying = true
+lie = "Price"
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

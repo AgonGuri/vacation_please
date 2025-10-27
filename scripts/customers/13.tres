@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://srao66gjqowb"]
+
+[ext_resource type="Texture2D" uid="uid://dok3ibl3t07pe" path="res://Assets/animalsprites/worm.png" id="1_o0b2y"]
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_o57r3"]
+
+[resource]
+script = ExtResource("1_o57r3")
+name = "Wiggle Wiggle"
+species = "worm"
+portrait = ExtResource("1_o0b2y")
+condition = "birth through seperation of his brother"
+price = 45000
+insured = true
+is_lying = true
+lie = "Condition"
+metadata/_custom_type_script = "uid://gekfvna5qo3b"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://cmtwfl5fjmv8x"]
+
+[ext_resource type="Texture2D" uid="uid://dok3ibl3t07pe" path="res://Assets/animalsprites/worm.png" id="1_i75cu"]
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_snkjq"]
+
+[resource]
+script = ExtResource("1_snkjq")
+name = "Shelby Wiggle"
+species = "worm"
+portrait = ExtResource("1_i75cu")
+condition = "getting operated out of a dog"
+price = 670
+insured = true
+metadata/_custom_type_script = "uid://gekfvna5qo3b"
