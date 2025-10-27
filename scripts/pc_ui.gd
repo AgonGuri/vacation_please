@@ -54,7 +54,6 @@ func on_names_button_pressed():
 		var button = Button.new()
 		var insured_text = "yes" if customer.insured else "no"
 		button.text = "%s, insured: %s" % [customer.name, insured_text]
-		#//meContainer.scroll_vertical = 0
 		button.pressed.connect(Callable(self, "customer_button_click").bind(customer))
 		animals.add_child(button)
 		
@@ -72,9 +71,11 @@ func on_names_button_pressed():
 		##//meContainer.scroll_vertical = 0
 
 func customer_button_click(customer: CustomerResource):
-		document.visible = true
-		
-		document.pressed.connect(Callable(self, "show_document").bind(customer))
+	namesButton.visible = false
+	conditionsButton.visible = false
+	document.visible = false
+	buttonBack.visible = true
+	show_document(customer)
 		
 func show_document(customer: CustomerResource):
 	document.visible = false
