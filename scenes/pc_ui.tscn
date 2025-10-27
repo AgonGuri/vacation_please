@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://boepidkh0v6vi"]
 
-[ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scenes/pc_ui.gd" id="1_gro16"]
+[ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scripts/pc_ui.gd" id="1_gro16"]
 [ext_resource type="Texture2D" uid="uid://b8my5ra1jwicu" path="res://icon.svg" id="2_yj1s0"]
 
 [node name="MainUI" type="Control"]
@@ -20,13 +20,13 @@ offset_right = 591.0
 offset_bottom = 48.0
 text = "Information about our liers muahahah"
 
-[node name="NamesButton" type="TextureButton" parent="."]
+[node name="NamesButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 193.0
 offset_top = 69.0
 offset_right = 321.0
 offset_bottom = 197.0
-texture_normal = ExtResource("2_yj1s0")
+text = "Names"
 
 [node name="NameList" type="VScrollBar" parent="."]
 modulate = Color(0.79607844, 1, 1, 1)
@@ -55,7 +55,7 @@ texture_normal = ExtResource("2_yj1s0")
 layout_mode = 0
 offset_left = 196.0
 offset_top = 63.0
-offset_right = 638.0
+offset_right = 783.0
 offset_bottom = 589.0
 
 [node name="Conditions" type="VBoxContainer" parent="ConditionList"]
