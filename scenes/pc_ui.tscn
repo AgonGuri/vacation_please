@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://boepidkh0v6vi"]
+[gd_scene load_steps=2 format=3 uid="uid://cfy5c3hbdy03k"]
 
 [ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scripts/pc_ui.gd" id="1_gro16"]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 1.0
@@ -74,6 +75,7 @@ offset_bottom = 120.0
 text = "Document"
 
 [node name="DocumentPanel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 207.0
 offset_top = 91.0
