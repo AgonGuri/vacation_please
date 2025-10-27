@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://582ctljmxnt8"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://ch4rjyshcmu"]
 
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_bg0rl"]
 [ext_resource type="Texture2D" uid="uid://dl5ywb7k15a3v" path="res://Assets/animalsprites/millipede.png" id="1_yexls"]
@@ -10,5 +10,6 @@ species = "milipede"
 portrait = ExtResource("1_yexls")
 condition = "Phsychotherapy concerning sexual issues"
 price = 18000
+max_payout = 50
 insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

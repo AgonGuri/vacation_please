@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://cl14370e0c557"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://vqx7e8et10sr"]
 
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_30808"]
 [ext_resource type="Texture2D" uid="uid://d0if75ltxpsbj" path="res://Assets/animalsprites/elephant.png" id="1_rmgh3"]
@@ -10,5 +10,6 @@ species = "elephant"
 portrait = ExtResource("1_rmgh3")
 condition = "Giant Lightbulb in the trunk"
 price = 1105
+max_payout = 1100
 insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"

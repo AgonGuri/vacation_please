@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://iq6iq0o01sa7"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://dpj2ajfqquaw8"]
 
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_0bjcd"]
 [ext_resource type="Texture2D" uid="uid://chn63gxv74qll" path="res://Assets/animalsprites/crow.png" id="1_3i5y8"]
@@ -10,6 +10,7 @@ species = "crow"
 portrait = ExtResource("1_3i5y8")
 condition = "hyposensibilisation against wasp venom"
 price = 8600
+max_payout = 10000
 is_lying = true
 lie = "Insured"
 metadata/_custom_type_script = "uid://gekfvna5qo3b"
