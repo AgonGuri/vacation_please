@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://db03gyr0boyor"]
+
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_0ibpb"]
+[ext_resource type="Texture2D" uid="uid://b7y85vdrbga1v" path="res://Assets/animalsprites/mole.png" id="1_jllbb"]
+
+[resource]
+script = ExtResource("1_0ibpb")
+name = "Monty Kleine"
+species = "mole"
+portrait = ExtResource("1_jllbb")
+condition = "Nasal recorrection"
+price = 6000
+insured = true
+is_lying = true
+lie = "Price"
+metadata/_custom_type_script = "uid://gekfvna5qo3b"

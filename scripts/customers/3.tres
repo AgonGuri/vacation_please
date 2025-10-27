@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_u80nh")
-name = "dog"
+name = "Orphelia Himmelstein"
+species = "dog"
+portrait = ExtResource("1_g7npb")
 condition = "nasal cancer"
 price = 3500
-portrait = ExtResource("1_g7npb")
-lie = "hm"
 metadata/_custom_type_script = "uid://gekfvna5qo3b"
