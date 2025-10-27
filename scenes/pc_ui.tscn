@@ -1,29 +1,124 @@
-[gd_scene format=3 uid="uid://cfy5c3hbdy03k"]
+[gd_scene load_steps=2 format=3 uid="uid://cfy5c3hbdy03k"]
 
-[node name="PcUi" type="Node2D"]
+[ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scripts/pc_ui.gd" id="1_gro16"]
 
-[node name="MainUI" type="Control" parent="."]
+[node name="MainUI" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gro16")
 
-[node name="NameList" type="VBoxContainer" parent="MainUI"]
+[node name="Information" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 196.0
+offset_top = 34.0
+offset_right = 592.0
+offset_bottom = 72.0
+text = "Information about our liers muahahah"
 
-[node name="Conditions" type="VBoxContainer" parent="MainUI"]
+[node name="NamesButton" type="Button" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 193.0
+offset_top = 69.0
+offset_right = 321.0
+offset_bottom = 134.0
+text = "Names"
 
-[node name="Form" type="TextureButton" parent="MainUI"]
+[node name="NameList" type="VScrollBar" parent="."]
+modulate = Color(0.79607844, 1, 1, 1)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 194.0
+offset_top = 66.0
+offset_right = 639.0
+offset_bottom = 583.0
 
-[node name="Information" type="Label" parent="MainUI"]
+[node name="Names" type="VBoxContainer" parent="NameList"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 36.0
+offset_top = 32.0
+offset_right = 428.0
+offset_bottom = 508.0
+
+[node name="ConditionsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 144.0
+offset_right = 320.0
+offset_bottom = 212.0
+text = "Conditions"
+
+[node name="ConditionList" type="VScrollBar" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 71.0
+offset_right = 637.0
+offset_bottom = 589.0
+
+[node name="Conditions" type="VBoxContainer" parent="ConditionList"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 19.0
+offset_right = 415.0
+offset_bottom = 498.0
+
+[node name="DocumentButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 683.0
+offset_top = 69.0
+offset_right = 790.0
+offset_bottom = 120.0
+text = "Document"
+
+[node name="DocumentPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 207.0
+offset_top = 91.0
+offset_right = 761.0
+offset_bottom = 699.0
+
+[node name="CustomerName" type="Label" parent="DocumentPanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 86.0
+offset_right = 87.0
+offset_bottom = 109.0
+text = "Name"
+
+[node name="CustomerCondition" type="Label" parent="DocumentPanel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 135.0
+offset_right = 176.0
+offset_bottom = 158.0
+text = "Why they nerfed:"
+
+[node name="CustomerPrice" type="Label" parent="DocumentPanel"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 183.0
+offset_right = 268.0
+offset_bottom = 206.0
+text = "How much money they want:"
+
+[node name="MoneyInput" type="LineEdit" parent="DocumentPanel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 237.0
+offset_right = 451.0
+offset_bottom = 280.0
+text = "How much you give them"
+placeholder_text = "amount"
+
+[node name="DoneButton" type="Button" parent="DocumentPanel"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 508.0
+offset_right = 512.0
+offset_bottom = 566.0
+text = "Done"

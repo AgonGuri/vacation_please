@@ -15,4 +15,5 @@ func closeCanvas() -> void:
 	button_pressed = false
 
 func _pressed() -> void:
+	if openCatalogue.visible == false:
 		openCatalogue.visible = true
