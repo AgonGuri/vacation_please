@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd1qh4dq3i4wr"]
+
+[ext_resource type="Texture2D" uid="uid://by6ojocygd2dp" path="res://assets/layout/frony_layout.png" id="1_7rr3c"]
+
+[node name="main_layout" type="Node2D"]
+
+[node name="FronyLayout" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_7rr3c")
