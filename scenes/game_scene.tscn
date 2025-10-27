@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3dw622hbdcoc"]
+
+[ext_resource type="Script" uid="uid://bd4ibh4fabtci" path="res://scripts/game_scene.gd" id="1_w5aja"]
+[ext_resource type="Script" uid="uid://bbqlr045k8se6" path="res://scripts/catalogue.gd" id="2_onqr8"]
+[ext_resource type="Texture2D" uid="uid://udilxfegvtjs" path="res://Assets/catalogue_stand_in.jpg" id="3_ycayy"]
+
+[node name="game_scene" type="Node2D"]
+script = ExtResource("1_w5aja")
+
+[node name="catalogue" type="TextureButton" parent="."]
+offset_left = 48.0
+offset_top = 535.99994
+offset_right = 186.77805
+offset_bottom = 723.8336
+rotation = -0.5235988
+script = ExtResource("2_onqr8")
+
+[node name="catalogue2" type="ColorRect" parent="catalogue"]
+layout_mode = 0
+offset_left = 0.34260178
+offset_top = 1.3720856
+offset_right = 40.3426
+offset_bottom = 41.372086
+scale = Vector2(3.44, 4.6400003)
+color = Color(0.77254903, 1, 0.7411765, 1)
+
+[node name="ColorRect" type="ColorRect" parent="catalogue/catalogue2"]
+layout_mode = 0
+offset_left = 9.967892
+offset_top = 1.9303701
+offset_right = 37.006454
+offset_bottom = 8.987263
+color = Color(1, 1, 0.6666667, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="catalogue/catalogue2"]
+layout_mode = 0
+offset_left = 3.044136
+offset_top = 24.994797
+offset_right = 37.96817
+offset_bottom = 37.58918
+color = Color(0.2901961, 0.4862745, 0.6666667, 1)
+
+[node name="openCatalogue" type="Sprite2D" parent="catalogue"]
+visible = false
+position = Vector2(544.4768, 64.93857)
+rotation = 0.5235988
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_ycayy")

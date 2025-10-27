@@ -1,6 +1,6 @@
-[gd_scene load_steps=0 format=3 uid="uid://c8exliiafwjf8"]
+[gd_scene format=3 uid="uid://t35k8itr41ss"]
 
-[node name="main Scene" type="Node2D"]
+[node name="layout_scene" type="Node2D"]
 
 [node name="Desk" type="ColorRect" parent="."]
 offset_top = 397.0
