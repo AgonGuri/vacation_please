@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=2 format=3 uid="uid://bpaut7o0od0im"]
+
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_restource.gd" id="1_aj3et"]
+
+[resource]
+script = ExtResource("1_aj3et")
+metadata/_custom_type_script = "uid://gekfvna5qo3b"
