@@ -27,5 +27,4 @@ func _ready():
 
 
 func _on_nobody_who_chat_response_updated(new_token: String) -> void:
-	print("token recieved")
 	ai_text.text += new_token
