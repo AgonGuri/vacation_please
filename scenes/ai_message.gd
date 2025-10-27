@@ -22,7 +22,6 @@ func _ready():
 	
 	await get_tree().process_frame
 	
-	ai_text.text = "TEST - Can you see this?"
 	
 	print("About to start talking")
 	ai_chat.say("start talking")
