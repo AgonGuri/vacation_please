@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://cen174532uw50"]
+
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_8kc4u"]
+[ext_resource type="Texture2D" uid="uid://d0if75ltxpsbj" path="res://Assets/animalsprites/elephant.png" id="1_d5bt0"]
+
+[resource]
+script = ExtResource("1_8kc4u")
+name = "Benjamin Flowerboy"
+species = "elephant"
+portrait = ExtResource("1_d5bt0")
+condition = "Schizophrenic Paranoia & Dissociative Identity Disorder"
+price = 10500
+insured = true
+metadata/_custom_type_script = "uid://gekfvna5qo3b"
