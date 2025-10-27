@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="CustomerResource" load_steps=2 format=3 uid="uid://mduxa7cw0neo"]
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://mduxa7cw0neo"]
 
+[ext_resource type="Texture2D" uid="uid://b7y85vdrbga1v" path="res://Assets/animalsprites/mole.png" id="1_acl37"]
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="1_ei7qp"]
 
 [resource]
@@ -7,5 +8,6 @@ script = ExtResource("1_ei7qp")
 name = "Esther Mole"
 condition = "cataract"
 price = 6495
+portrait = ExtResource("1_acl37")
 insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"
