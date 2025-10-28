@@ -111,6 +111,7 @@ position = Vector2(960, 540)
 texture = ExtResource("3_urhyu")
 
 [node name="MainUI" parent="." instance=ExtResource("8_4m2lt")]
+anchors_preset = 15
 offset_left = 1088.0
 offset_top = 139.0
 offset_right = 1782.0

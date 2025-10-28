@@ -10,7 +10,7 @@ var currency = 0
 
 func _ready():
 	load_and_randomize_clients()
-	next_customer()
+	#new_customer()
 	
 func load_and_randomize_clients():
 	var folder_path = "res://scripts/customers/"  # Change this to your folder
@@ -54,21 +54,20 @@ func load_and_randomize_clients():
 		customer.price
 	])
 
-func next_customer():
-	if current_customer == last_customer:
-		end_game()
-	else:
-		current_customer += 1
+#func new_customer():
+	#if current_customer == last_customer:
+		#end_game()
+	#else:
+		#current_customer += 1
 		#start_customer(current_customer)
-		
-	
+		#
+	#
 #func start_customer(customer):
 	#print(client_dict[customer].name)
 	##play animation and sound
 	##Load UI with relevant information
 	##Load corresponding LLM Text
 	#pass
-
 func get_all_customers_ordered() -> Array:
 	return clean_dict.values()
 
