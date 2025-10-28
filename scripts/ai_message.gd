@@ -3,8 +3,7 @@ extends Control
 @onready var ai_text = $PanelContainer/VBoxContainer/RichTextLabel
 @onready var ai_chat = $NobodyWhoChat
 @onready var overview = $PanelContainer/VBoxContainer/Overview
-@onready var label = $Label
-var customer = 1
+var customer = 0
 
 @export var client_name = ""
 @export var client_condition = ""
