@@ -7,6 +7,8 @@ var clean_dict = {} #dictionary for buttons on pc
 var scene
 var first_call = true
 
+
+
 var currency = 0
 
 func _ready():

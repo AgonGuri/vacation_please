@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ll5qosfnpld3"]
+[gd_scene load_steps=15 format=3 uid="uid://3j0i8617piqy"]
 
 [ext_resource type="Texture2D" uid="uid://b7y85vdrbga1v" path="res://Assets/animalsprites/mole.png" id="1_4lhwc"]
 [ext_resource type="Texture2D" uid="uid://by6ojocygd2dp" path="res://Assets/layout/frony_layout.png" id="1_7rr3c"]
