@@ -24,7 +24,6 @@ func generate_text():
 	#Stop LLM from printing previous message
 	ai_chat.stop_generation()
 	ai_chat.reset_context()
-	ai_chat.stop_words
 	
 	#update current customer & variables
 	customer = Global.current_customer
@@ -55,8 +54,8 @@ func generate_text():
 	
 	ai_chat.stop_generation()
 	ai_chat.reset_context()
-	ai_chat.stop_words
 	
+	ai_text.text = ""
 	print(ai_chat.system_prompt)
 	ai_chat.say("start talking")
 
