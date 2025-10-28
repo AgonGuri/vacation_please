@@ -68,6 +68,9 @@ func load_and_randomize_clients():
 	##Load UI with relevant information
 	##Load corresponding LLM Text
 	#pass
+func get_all_customers_ordered() -> Array:
+	return clean_dict.values()
+
 func get_customer(index: int):
 	return client_dict.get(index, null)
 

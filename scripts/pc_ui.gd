@@ -9,6 +9,7 @@ extends Control
 
 #var conditions_list = ["broken nose", "dirrahea", "eye infection", "uncotrollable laughing"]
 var customer_resource: Array[CustomerResource] = []
+var current_customer: CustomerResource
 
 @onready var animals = $NinePatchRect/Panel/NameList/Names
 @onready var namesButton = $NinePatchRect/Panel/NamesButton
@@ -45,7 +46,7 @@ func homescreen():
 	conditionsButton.visible = true
 	
 func populate_customer_text():
-	var customers = Global.get_all_customers()
+	var customers = Global.get_all_customers_ordered()
 	var text = ""
 	for customer in customers:
 		var button = Button.new()
@@ -78,6 +79,7 @@ func on_names_button_pressed():
 		##//meContainer.scroll_vertical = 0
 
 func customer_button_click(customer: CustomerResource):
+	current_customer = customer
 	namesButton.visible = false
 	conditionsButton.visible = false
 	document.visible = false
@@ -92,7 +94,7 @@ func show_document(customer: CustomerResource):
 	customer_species.text = "Species: %s" % customer.species
 	customer_insurance_status.text = "Has insurance: %s" % customer.insured
 	
-	money_input.text = "Money you give them" # Clear input
+	money_input.text = "Money you give them" 
 	##//done_button.pressed.disconnect_all()
 	
 func on_back_button_pressed():
@@ -101,3 +103,20 @@ func on_back_button_pressed():
 	
 func on_done_button_pressed():
 	document_panel.visible = false
+	
+	var moneyAmount = money_input.text.strip_edges()
+	if moneyAmount == "":
+		push_warning("Sirrrrr please enter som moneh")
+		return
+		
+	var amount = float(moneyAmount)
+	if current_customer:
+		emit_signal("ok u gib money", current_customer, amount)
+	else:
+		push_warning("No customer found :(")
+	homescreen()
+		
+	
+	
+	
+	
