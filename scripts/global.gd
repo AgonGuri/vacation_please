@@ -6,6 +6,8 @@ var client_dict = {} #dictionary for clients showing up(same as below but random
 var clean_dict = {} #dictionary for buttons on pc
 var scene
 
+
+
 var currency = 0
 
 func _ready():

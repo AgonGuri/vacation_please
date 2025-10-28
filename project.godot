@@ -25,6 +25,10 @@ Global="*res://scripts/global.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 
+[gui]
+
+theme/custom="uid://qu0o0vxmbjsw"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
