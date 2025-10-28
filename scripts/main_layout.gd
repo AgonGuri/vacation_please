@@ -15,10 +15,11 @@ func _ready() -> void:
 	if instance_loaded == false:
 		instance = load("res://scenes/AI Message.tscn").instantiate()
 		add_child(instance)
+		instance.boss_text("Hello ... Papa Seal, I hope I said that correctly. So when a client comes in you give them no more money than our maximum payout. You can see that in the conditions table. If you catch a liar they will not get any money. Have fun.")
 		instance_loaded = true
 	$AnimalSprite.texture = boss_portrait
 	$AnimationPlayer.play("customer_new")
-	instance.boss_text("Hello ... Papa Seal, I hope I said that correctly. So when a client comes in you give them no more money than our maximum payout. You can see that in the conditions table. If you catch a liar they will not get any money. Have fun.")
+	
 	await get_tree().create_timer(1.0).timeout
 	is_boss = true
 
