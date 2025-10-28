@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://3j0i8617piqy"]
+[gd_scene load_steps=16 format=3 uid="uid://ll5qosfnpld3"]
 
 [ext_resource type="Texture2D" uid="uid://b7y85vdrbga1v" path="res://Assets/animalsprites/mole.png" id="1_4lhwc"]
 [ext_resource type="Texture2D" uid="uid://by6ojocygd2dp" path="res://Assets/layout/frony_layout.png" id="1_7rr3c"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://svr384p4hlgd" path="res://Assets/interactable/catalog_2.png" id="3_4jnhx"]
 [ext_resource type="Texture2D" uid="uid://cemoejxtwyj6t" path="res://Assets/interactable/catalog.png" id="4_4jnhx"]
 [ext_resource type="Script" uid="uid://bbqlr045k8se6" path="res://scripts/catalogue.gd" id="5_f6vs1"]
-[ext_resource type="PackedScene" path="res://scenes/currency.tscn" id="6_urhyu"]
+[ext_resource type="PackedScene" uid="uid://drbjmsweeri05" path="res://scenes/currency.tscn" id="6_urhyu"]
 [ext_resource type="PackedScene" uid="uid://boepidkh0v6vi" path="res://scenes/pc_ui.tscn" id="8_4m2lt"]
 [ext_resource type="AudioStream" uid="uid://c64bqfrfk2g4e" path="res://Assets/sad.mp3" id="11_6flo5"]
 
@@ -139,7 +139,7 @@ script = ExtResource("5_f6vs1")
 [node name="openCatalogue" type="Sprite2D" parent="catalogue"]
 visible = false
 z_index = 6
-position = Vector2(936, -113)
+position = Vector2(1016, -166)
 texture = ExtResource("4_4jnhx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -149,7 +149,7 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_6flo5")
-volume_db = -12.218
+volume_db = -30.0
 autoplay = true
 
 [connection signal="money_sent" from="MainUI" to="." method="_on_main_ui_money_sent"]
