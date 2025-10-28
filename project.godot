@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Vacation_Please"
-run/main_scene="uid://boepidkh0v6vi"
+run/main_scene="uid://ll5qosfnpld3"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="uid://boepidkh0v6vi"
@@ -24,6 +24,10 @@ Global="*res://scripts/global.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[gui]
+
+theme/custom="uid://qu0o0vxmbjsw"
 
 [rendering]
 

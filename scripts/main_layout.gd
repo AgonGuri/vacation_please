@@ -9,15 +9,28 @@ var boss_portrait = load("res://Assets/animalsprites/boss.png")
 var is_boss= false
 var instance_loaded = false
 
+
+@export var COMMISSION_PERCENTAGE = 0.15
+@export var BONUS_PERCENTAGE = 0.4
+@export var COURT_COST = 2000
+@export var LYER_REWARD = 10
+@export var LIE_COMING_OUT_PERCENTAGE = .5
+@export var WRONG_CUSTOMER_FINE = 100
+var boss_text = " "
+
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
 	if instance_loaded == false:
 		instance = load("res://scenes/AI Message.tscn").instantiate()
 		add_child(instance)
+		instance.boss_text("Hello ... Papa Seal, I hope I said that correctly. So when a client comes in you give them no more money than our maximum payout. You can see that in the conditions table. If you catch a liar they will not get any money. Have fun.")
 		instance_loaded = true
-	new_customer()
-	pass # Replace with function body.
+	$AnimalSprite.texture = boss_portrait
+	$AnimationPlayer.play("customer_new")
+	
+	await get_tree().create_timer(1.0).timeout
+	is_boss = true
 
 func new_customer():
 	Global.next_customer()
@@ -29,6 +42,8 @@ func new_customer():
 	instance.generate_text()
 
 func show_boss(text):
+	$AnimationPlayer.play("customer_leave")
+	await get_tree().create_timer(1.0).timeout
 	$AnimalSprite.texture = boss_portrait
 	$AnimationPlayer.play("customer_new")
 	instance.boss_text(text)
@@ -47,19 +62,14 @@ func _input(event: InputEvent) -> void:
 	
 	#get rid of boss and load new customer
 	if is_boss && event.is_pressed():
+		$AnimationPlayer.play("customer_leave")
+		await get_tree().create_timer(1.0).timeout
 		is_boss = false
 		new_customer()
 
 #-------------------------------------------------------------------------------
 # calculation outcomes
 #-------------------------------------------------------------------------------
-var COMMISSION_PERCENTAGE = 0.15
-var BONUS_PERCENTAGE = 0.4
-var COURT_COST = 2000
-var LYER_REWARD = 10
-var LIE_COMING_OUT_PERCENTAGE = .5
-var WRONG_CUSTOMER_FINE = 100
-var boss_text = " "
 
 func commission(money):
 	return money * COMMISSION_PERCENTAGE
@@ -88,32 +98,31 @@ func _on_main_ui_money_sent(customer: CustomerResource, amount: float) -> void:
 				#we pay everything
 				Global.currency -= amount
 				boss_text = "You pay for that liar from your own pocket!"
-			else: print("lie didnt come out")
-		else:
-			#handeled customer well
-			if amount == customer.max_payout : 
-				Global.currency += commission(amount)
-				print("customer handeled well")
-				boss_text = "Customer well handeled, heres the commission"
-
+		print("lie didnt come out")
+		#handeled customer well
+		if amount == customer.max_payout : 
+			Global.currency += commission(amount)
+			print("customer handled well")
+			boss_text = "Customer well handeled, heres the commission"
 			#pay out of own pocket
-			if amount > customer.max_payout:
-				Global.currency -= (amount - customer.max_payout)
-				print("gave too much money")
-				boss_text = "No commission for you and you are paying everything over our max payout from your own pocket!"
-
+		if amount > customer.max_payout:
+			Global.currency -= (amount - customer.max_payout)
+			print("gave too much money")
+			boss_text = "No commission for you and you are paying everything over our max payout from your own pocket!"
 			#get bonus since we save money
-			if amount < customer.max_payout: 
-				Global.currency += commission(amount) + bonus(customer.max_payout - amount)
-				print("bonus")
-				boss_text = "Nice you saved us some money, here is a bonus for the good work!"
-				
-				#the less we give them the higher the chance of being sued
-				if amount < customer.price:
-					if randf() < (customer.max_payout - amount) / customer.max_payout:
-						print("sued")
-						#rest of what they could have gotten + court cost
-						boss_text = ("you got sued and have to pay: %s" % (customer.max_payout - amount + COURT_COST))
-						Global.currency -= customer.max_payout - amount + COURT_COST
+		if amount < customer.max_payout: 
+			Global.currency += commission(amount) + bonus(customer.max_payout - amount)
+			print("bonus")
+			boss_text = "Nice you saved us some money, here is a bonus for the good work!"
+			
+			#the less we give them the higher the chance of being sued
+			if amount < customer.price:
+				if randf() < (customer.max_payout - amount) / customer.max_payout:
+					if customer.is_lying:
+						boss_text = "That liar tried to sue you, but the legal department handeled that, dont worry."
+					print("sued")
+					#rest of what they could have gotten + court cost
+					boss_text = ("you got sued and have to pay: %s" % (customer.max_payout - amount + COURT_COST))
+					Global.currency -= customer.max_payout - amount + COURT_COST
 	#showing the boss:
 	show_boss(boss_text)

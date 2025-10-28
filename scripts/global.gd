@@ -9,6 +9,8 @@ var first_call = true
 
 var currency = 0
 
+
+
 func _ready():
 	client_list()
 	
