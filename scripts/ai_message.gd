@@ -15,11 +15,13 @@ var customer = 1
 @export var client_lie = ""
 
 func _ready():
+	await get_tree().process_frame
 	generate_text()
 
 func generate_text():
 	
 	customer = Global.current_customer
+	print(customer)
 	client_name = Global.client_dict[customer].name
 	client_species = Global.client_dict[customer].species
 	client_condition = Global.client_dict[customer].condition

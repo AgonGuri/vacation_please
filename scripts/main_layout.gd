@@ -16,6 +16,9 @@ func _ready() -> void:
 func new_customer():
 	Global.next_customer()
 	current_customer = Global.client_dict[Global.current_customer]
+	print(Global.current_customer)
+	$AnimalSprite.texture = current_customer.portrait
+	$AnimationPlayer.play("customer_new")
 	pass
 
 
