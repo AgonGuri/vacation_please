@@ -50,3 +50,5 @@ script = ExtResource("5_f6vs1")
 visible = false
 position = Vector2(936, -113)
 texture = ExtResource("4_4jnhx")
+
+[connection signal="money_sent" from="MainUI" to="." method="_on_main_ui_money_sent"]
