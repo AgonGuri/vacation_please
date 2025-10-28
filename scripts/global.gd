@@ -10,7 +10,7 @@ var currency = 0
 
 func _ready():
 	load_and_randomize_clients()
-	next_customer()
+	#next_customer()
 	
 func load_and_randomize_clients():
 	var folder_path = "res://scripts/customers/"  # Change this to your folder
