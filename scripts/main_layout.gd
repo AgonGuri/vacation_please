@@ -4,11 +4,12 @@ extends Node2D
 @onready var catalogue = $catalogue
 
 var current_customer
+var instance
 
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	var instance = load("res://scenes/AI Message.tscn").instantiate()
+	instance = load("res://scenes/AI Message.tscn").instantiate()
 	add_child(instance)
 	new_customer()
 	pass # Replace with function body.
@@ -19,6 +20,8 @@ func new_customer():
 	print(Global.current_customer)
 	$AnimalSprite.texture = current_customer.portrait
 	$AnimationPlayer.play("customer_new")
+	instance.delete_text()
+	instance.generate_text()
 	pass
 
 
@@ -65,3 +68,4 @@ func _on_main_ui_money_sent(customer: CustomerResource, amount: float) -> void:
 				#rest of what they could have gotten + court
 				print("you got sued and have to pay: ", (customer.max_payout - amount + COURT_COST))
 				Global.currency -= customer.max_payout - amount + COURT_COST
+	new_customer()
