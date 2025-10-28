@@ -1,10 +1,11 @@
 extends Node
 
 @export var current_customer = 0
-@export var last_customer = 3
+@export var last_customer = 7
 var client_dict = {} #dictionary for clients showing up(same as below but randomized)
 var clean_dict = {} #dictionary for buttons on pc
 var scene
+var first_call = true
 
 var currency = 0
 
@@ -77,6 +78,9 @@ func next_customer():
 	if current_customer >= last_customer:
 		end_game()
 	else:
+		if first_call:
+			first_call = false
+			return get_customer(current_customer)
 		current_customer += 1
 		return get_customer(current_customer)
 
@@ -87,4 +91,7 @@ func end_game():
 func reset():
 	print("resetting")
 	current_customer = 0
+	first_call = true
+	client_dict = {}
+	clean_dict = {}
 	client_list()

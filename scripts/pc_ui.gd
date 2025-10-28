@@ -20,6 +20,8 @@ signal money_sent(customer: CustomerResource, amount: float)
 @onready var money_input = $NinePatchRect/DocumentPanel/MoneyInput
 @onready var done_button = $NinePatchRect/DocumentPanel/DoneButton
 @onready var buttonBack = $NinePatchRect/Button
+@onready var label_conditions = $NinePatchRect/Panel/LabelConditions
+@onready var label_names = $NinePatchRect/Panel/LabelNames
 
 
 #calling functions and connecting buttons 
@@ -41,6 +43,8 @@ func homescreen():
 	buttonBack.visible = false
 	namesButton.visible = true
 	conditionsButton.visible = true
+	label_conditions.visible = false
+	label_names.visible = false
 	
 #getting the information about each customer
 func populate_customer_text():
@@ -48,6 +52,9 @@ func populate_customer_text():
 #read in the exact order from the folder they are created in
 	for child in animals.get_children():
 		child.queue_free()
+		
+	animals.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	animals.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	
 	var customers = Global.get_all_customers_ordered()
 	var text = ""
@@ -56,6 +63,7 @@ func populate_customer_text():
 		button.text = "%s" % [customer.name]
 		button.pressed.connect(Callable(self, "customer_button_click").bind(customer))
 		button.add_theme_color_override("font_color", Color.BLACK)
+		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		
 		#ui for buttons
 		var style = StyleBoxFlat.new()
@@ -71,6 +79,8 @@ func populate_customer_text():
 		var focus_style = StyleBoxFlat.new()
 		focus_style.bg_color = Color.BLUE
 		button.add_theme_stylebox_override("focus", focus_style)
+		
+		button.size_flags_vertical = Control.SIZE_EXPAND_FILL
 		animals.add_child(button)
 
 #when you click on the names' button it does some ui stuff
@@ -79,6 +89,8 @@ func on_names_button_pressed():
 	conditionsButton.visible = false
 	buttonBack.visible = true
 	nameContainer.visible = true
+	label_conditions.visible = false
+	label_names.visible = true
 	
 
 func on_conditions_button_pressed():
@@ -86,6 +98,8 @@ func on_conditions_button_pressed():
 	conditionsButton.visible = false
 	buttonBack.visible = true
 	conditionContainer.visible = true
+	label_conditions.visible = true
+	label_names.visible = false
 	create_conditions_as_labels()
 
 
@@ -125,9 +139,8 @@ func show_document(customer: CustomerResource):
 	document_panel.visible = true
 	customer_name.text = "Name: %s" % customer.name
 	customer_species.text = "Species: %s" % customer.species
-	customer_insurance_status.text = "Has insurance: %s" % customer.insured
-	money_input.text = "Amount in $" 
-	##//done_button.pressed.disconnect_all()
+	customer_insurance_status.text = "Has insurance: %s" % ("Yes" if customer.insured else "No")
+	money_input.text = "" 
 	
 #go back button
 func on_back_button_pressed():
