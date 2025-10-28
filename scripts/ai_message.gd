@@ -2,6 +2,7 @@ extends Control
 
 @onready var ai_text = $PanelContainer/VBoxContainer/RichTextLabel
 @onready var ai_chat = $NobodyWhoChat
+@onready var overview = $PanelContainer/VBoxContainer/Overview
 
 var customer = 1
 
@@ -27,12 +28,14 @@ func generate_text():
 	client_lie = Global.client_dict[customer].lie
 	client_is_insured = Global.client_dict[customer].insured
 	
+	overview.text = "Name: " + client_name + "\nSpecies: " + client_species + "\nCondition: " + client_condition + "\nClaim: " + str(client_price)
+	
 	if client_is_lying == false:
 		print("setting truthful prompt")
-		ai_chat.system_prompt = "Your name is " + client_name + " and you are a " + client_species + ". You are talking to a health insurance, trying to get a payout. You say you suffered from " + client_condition + " and it cost you " + str(client_price) + " Lovecoints (a fictional currency). You have insurance at this company and they owe you the money. Your speech should be somewhat formal and have a random length between 60 and 100 words. You may only use plain speech. You are being truthful."
+		ai_chat.system_prompt = "In this world everyone is an animal. Your name is " + client_name + ". You are talking to a health insurance representative, trying to get a payout. You say you suffered from " + client_condition + " and it cost you " + str(client_price) + " Lovecoints (a fictional currency). Your speech should be in coherent, formal sentences, and around 100 words. Never send anything other than literal, direct speech (for example: never describe your actions in **)."
 	elif client_is_lying == true:
 		print("setting lying prompt")
-		ai_chat.system_prompt = ""
+		ai_chat.system_prompt = "In this world everyone is an animal. You are talking to a health insurance representative and want to get a payout. Your speak in coherent, formal sentences. Use about 100 words. However, you are lying about " + client_lie + ". You say your name is " + client_name + ". You request a payout of " + str(client_price) + " Lovecoins (a fictional currency) for " + client_condition + ". If you are lying about your condition give the reader a hint to figure it out (hidden in the text). Never send anything other than literal, direct speech (for example: never describe your actions in **)."
 	else:
 		print("Error: client_is_lying not found/set")
 	
@@ -42,6 +45,7 @@ func generate_text():
 	ai_chat.say("start talking")
 
 func delete_text():
+	overview.text("")
 	ai_text.text("")
 
 
