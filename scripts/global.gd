@@ -10,11 +10,11 @@ var currency = 0
 
 func _ready():
 	load_and_randomize_clients()
-	new_customer()
+	#new_customer()
 	
 func load_and_randomize_clients():
 	var folder_path = "res://scripts/customers/"  # Change this to your folder
-	var clients = []
+	var clients: Array = []
 	
 	# Get all files from the folder
 	var dir = DirAccess.open(folder_path)
@@ -44,21 +44,45 @@ func load_and_randomize_clients():
 		client_dict[i] = clients[i]
 	
 	print("Loaded ", client_dict.size(), " clients")
+	for key in client_dict.keys():
+		var customer = client_dict[key]
+		print("%d: Name: %s, Insured: %s, Condition: %s, Price: $%d" % [
+		key,
+		customer.name,
+		"Yes" if customer.insured else "No",
+		customer.condition,
+		customer.price
+	])
 
-func new_customer():
-	if current_customer == last_customer:
+#func new_customer():
+	#if current_customer == last_customer:
+		#end_game()
+	#else:
+		#current_customer += 1
+		#start_customer(current_customer)
+		#
+	#
+#func start_customer(customer):
+	#print(client_dict[customer].name)
+	##play animation and sound
+	##Load UI with relevant information
+	##Load corresponding LLM Text
+	#pass
+func get_all_customers_ordered() -> Array:
+	return clean_dict.values()
+
+func get_customer(index: int):
+	return client_dict.get(index, null)
+
+func get_all_customers() -> Array:
+	return client_dict.values()
+
+func next_customer():
+	if current_customer >= last_customer:
 		end_game()
 	else:
 		current_customer += 1
-		start_customer(current_customer)
-		
-	
-func start_customer(customer):
-	print(client_dict[customer].name)
-	#play animation and sound
-	#Load UI with relevant information
-	#Load corresponding LLM Text
-	pass
+		return get_customer(current_customer)
 
 func end_game():
-	pass
+	print("Game Over")
