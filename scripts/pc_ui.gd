@@ -1,15 +1,9 @@
 extends Control
 
-#var animals_list = [
-	#{"name": "agon", "insured": false},
-	#{"name": "patrick", "insured": true}, 
-	#{"name": "kris", "insured": true},
-	#{"name": "sara", "insured": false}, 
-#]
 
-#var conditions_list = ["broken nose", "dirrahea", "eye infection", "uncotrollable laughing"]
 var customer_resource: Array[CustomerResource] = []
-var current_customer: CustomerResource
+var current_customer: CustomerResource 
+#so we know to which customer what amount of money is sent
 signal money_sent(customer: CustomerResource, amount: float)
 
 @onready var animals = $NinePatchRect/Panel/NameList/Names
@@ -28,9 +22,10 @@ signal money_sent(customer: CustomerResource, amount: float)
 @onready var done_button = $NinePatchRect/DocumentPanel/DoneButton
 @onready var buttonBack = $NinePatchRect/Button
 
+
+#calling functions and connecting buttons 
 func _ready():
 	size = Vector2(694, 677)
-
 	populate_customer_text()
 	homescreen()
 	done_button.pressed.connect(on_done_button_pressed)
@@ -38,6 +33,7 @@ func _ready():
 	buttonBack.pressed.connect(on_back_button_pressed)
 	#conditionsButton.pressed.connect(on_conditions_button_pressed)
 
+#ui stuff
 func homescreen():
 	nameContainer.visible = false
 	conditionContainer.visible = false
@@ -46,7 +42,10 @@ func homescreen():
 	namesButton.visible = true
 	conditionsButton.visible = true
 	
+#getting the information about each customer
 func populate_customer_text():
+#called from the global script
+#read in the exact order from the folder they are created in
 	var customers = Global.get_all_customers_ordered()
 	var text = ""
 	for customer in customers:
@@ -55,7 +54,8 @@ func populate_customer_text():
 		button.text = "%s, insured: %s" % [customer.name, insured_text]
 		button.pressed.connect(Callable(self, "customer_button_click").bind(customer))
 		animals.add_child(button)
-		
+
+#when you click on the names' button it does some ui stuff
 func on_names_button_pressed():
 	namesButton.visible = false
 	conditionsButton.visible = false
@@ -79,6 +79,7 @@ func on_names_button_pressed():
 		#conditions.add_child(label)
 		##//meContainer.scroll_vertical = 0
 
+#when you click on some customer the document pops up 
 func customer_button_click(customer: CustomerResource):
 	current_customer = customer
 	namesButton.visible = false
@@ -86,7 +87,8 @@ func customer_button_click(customer: CustomerResource):
 	document.visible = false
 	buttonBack.visible = true
 	show_document(customer)
-		
+
+#display of information about the chosen customer on the document
 func show_document(customer: CustomerResource):
 	document.visible = false
 	conditionContainer.visible = false
@@ -94,27 +96,31 @@ func show_document(customer: CustomerResource):
 	customer_name.text = "Name: %s" % customer.name
 	customer_species.text = "Species: %s" % customer.species
 	customer_insurance_status.text = "Has insurance: %s" % customer.insured
-	
 	money_input.text = "Money you give them" 
 	##//done_button.pressed.disconnect_all()
 	
+#go back button
 func on_back_button_pressed():
-	#change plis
 	homescreen()
 	
+#when we're done with the document 
 func on_done_button_pressed():
-	document_panel.visible = false
 	
+	#if input is string it cleans unnecessary spaces and stuff
 	var moneyAmount = money_input.text.strip_edges()
+	#error handling
 	if moneyAmount == "":
 		push_warning("Sirrrrr please enter som moneh")
 		return
 		
+	#reading the current customer and taking amount of money entered
 	var amount = float(moneyAmount)
 	if current_customer:
 		emit_signal("money_sent", current_customer, amount)
 	else:
 		push_warning("No customer found :(")
+		
+	document_panel.visible = false
 	homescreen()
 		
 	
