@@ -9,6 +9,15 @@ var boss_portrait = load("res://Assets/animalsprites/boss.png")
 var is_boss= false
 var instance_loaded = false
 
+
+@export var COMMISSION_PERCENTAGE = 0.15
+@export var BONUS_PERCENTAGE = 0.4
+@export var COURT_COST = 2000
+@export var LYER_REWARD = 10
+@export var LIE_COMING_OUT_PERCENTAGE = .5
+@export var WRONG_CUSTOMER_FINE = 100
+var boss_text = " "
+
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -60,13 +69,6 @@ func _input(event: InputEvent) -> void:
 #-------------------------------------------------------------------------------
 # calculation outcomes
 #-------------------------------------------------------------------------------
-var COMMISSION_PERCENTAGE = 0.15
-var BONUS_PERCENTAGE = 0.4
-var COURT_COST = 2000
-var LYER_REWARD = 10
-var LIE_COMING_OUT_PERCENTAGE = .5
-var WRONG_CUSTOMER_FINE = 100
-var boss_text = " "
 
 func commission(money):
 	return money * COMMISSION_PERCENTAGE

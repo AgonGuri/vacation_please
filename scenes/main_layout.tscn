@@ -101,6 +101,7 @@ _data = {
 
 [node name="main_layout" type="Node2D"]
 script = ExtResource("1_cq4yi")
+COMMISSION_PERCENTAGE = 0.3
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
