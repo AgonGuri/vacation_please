@@ -63,13 +63,13 @@ scroll_following = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 18.0
-offset_right = 374.0
-offset_bottom = 45.0
+offset_left = 169.0
+offset_top = 15.0
+offset_right = 372.0
+offset_bottom = 36.0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7iwd")
-text = "    Customer overview"
+text = "  "
 
 [connection signal="response_updated" from="NobodyWhoChat" to="." method="_on_nobody_who_chat_response_updated"]

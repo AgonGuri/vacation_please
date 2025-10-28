@@ -7,12 +7,15 @@ var current_customer
 var instance
 var boss_portrait = load("res://Assets/animalsprites/boss.png")
 var is_boss= false
+var instance_loaded = false
 
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	instance = load("res://scenes/AI Message.tscn").instantiate()
-	add_child(instance)
+	if instance_loaded == false:
+		instance = load("res://scenes/AI Message.tscn").instantiate()
+		add_child(instance)
+		instance_loaded = true
 	new_customer()
 	pass # Replace with function body.
 

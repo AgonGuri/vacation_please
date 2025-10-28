@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://qu0o0vxmbjsw"]
+
+[ext_resource type="FontFile" uid="uid://ckr0rgjs6ocyi" path="res://Assets/font/Encode_Sans/static/EncodeSans_Condensed-Regular.ttf" id="1_t8cdc"]
+
+[resource]
+default_font = ExtResource("1_t8cdc")

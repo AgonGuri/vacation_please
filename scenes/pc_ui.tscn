@@ -1,6 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://boepidkh0v6vi"]
+[gd_scene load_steps=20 format=3 uid="uid://boepidkh0v6vi"]
 
 [ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scripts/pc_ui.gd" id="1_gro16"]
+[ext_resource type="FontFile" uid="uid://chrkgu23rc7c7" path="res://Assets/font/Encode_Sans/EncodeSans-VariableFont_wdth,wght.ttf" id="2_yj1s0"]
+[ext_resource type="FontFile" uid="uid://bhcd1gea7bpqh" path="res://Assets/font/Encode_Sans/static/EncodeSans_Condensed-Bold.ttf" id="3_g1cg7"]
+[ext_resource type="FontFile" uid="uid://ckr0rgjs6ocyi" path="res://Assets/font/Encode_Sans/static/EncodeSans_Condensed-Regular.ttf" id="3_h7g8x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gro16"]
 bg_color = Color(0.6521786, 0.7062656, 0.6424379, 1)
@@ -113,6 +116,7 @@ offset_right = 682.0
 offset_bottom = 55.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_yj1s0")
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_anaay")
 text = "    XP User Interface [information about customers]"
@@ -132,6 +136,7 @@ offset_top = 51.0
 offset_right = 68.0
 offset_bottom = 74.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h7g8x")
 text = "Name:"
 
 [node name="MoneyAmount" type="Label" parent="NinePatchRect/DocumentPanel"]
@@ -141,6 +146,7 @@ offset_top = 137.0
 offset_right = 139.0
 offset_bottom = 160.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h7g8x")
 text = "Money amount"
 
 [node name="CustomerInsuranceStatus" type="Label" parent="NinePatchRect/DocumentPanel"]
@@ -150,6 +156,7 @@ offset_top = 108.0
 offset_right = 149.0
 offset_bottom = 131.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h7g8x")
 text = "Has insurance:"
 
 [node name="CustomerSpecies" type="Label" parent="NinePatchRect/DocumentPanel"]
@@ -159,6 +166,7 @@ offset_top = 79.0
 offset_right = 243.0
 offset_bottom = 102.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_h7g8x")
 text = "Species:"
 
 [node name="MoneyInput" type="LineEdit" parent="NinePatchRect/DocumentPanel"]
@@ -181,6 +189,7 @@ offset_top = 465.0
 offset_right = 296.0
 offset_bottom = 498.0
 theme_override_colors/font_color = Color(0.05629144, 0.056291677, 0.056291506, 1)
+theme_override_fonts/font = ExtResource("3_g1cg7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m6r30")
 text = "Accept
 "
@@ -190,6 +199,7 @@ layout_mode = 0
 offset_right = 308.0
 offset_bottom = 31.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g1cg7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5hm27")
 text = "    Insurance Document"
 
@@ -206,6 +216,7 @@ layout_mode = 0
 offset_right = 335.0
 offset_bottom = 31.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g1cg7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wqgh2")
 text = "   Names"
 
@@ -250,6 +261,7 @@ layout_mode = 0
 offset_right = 403.0
 offset_bottom = 31.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g1cg7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wqgh2")
 text = "   Conditions"
 
@@ -276,5 +288,6 @@ offset_top = 604.0
 offset_right = 116.0
 offset_bottom = 636.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g1cg7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gthla")
 text = "Go Back"
