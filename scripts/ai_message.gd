@@ -16,7 +16,7 @@ var customer = 1
 
 func _ready():
 	await get_tree().process_frame
-	generate_text()
+	#generate_text()
 
 
 func boss_text(text):
@@ -24,7 +24,8 @@ func boss_text(text):
 	ai_chat.stop_generation()
 	ai_chat.reset_context()
 	ai_text.text = ""
-	overview.text = "YOUR BOSS"
+	print("Hello")
+	overview.text = "YOUR BOSS:"
 	ai_text.text = str(text)
 	
 	
