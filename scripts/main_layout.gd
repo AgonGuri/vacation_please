@@ -28,7 +28,7 @@ func new_customer():
 func show_boss(text):
 	$AnimalSprite.texture = boss_portrait
 	$AnimationPlayer.play("customer_new")
-	#instance.stahp()
+	instance.boss_text(text)
 	instance.delete_text()
 	print(text)
 	await get_tree().create_timer(1.0).timeout

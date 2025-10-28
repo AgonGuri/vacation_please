@@ -19,6 +19,16 @@ func _ready():
 	generate_text()
 
 
+func boss_text(text):
+	ai_text.text = ""
+	ai_chat.stop_generation()
+	ai_chat.reset_context()
+	ai_text.text = ""
+	overview.text = "YOUR BOSS"
+	ai_text.text = str(text)
+	
+	
+
 func generate_text():
 	
 	#Stop LLM from printing previous message
