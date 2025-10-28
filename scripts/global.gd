@@ -19,46 +19,48 @@ func client_list():
 	#next_customer()
 	
 func load_and_randomize_clients():
-	var folder_path = "res://scripts/customers/"  # Change this to your folder
+	var folder_path = "res://scripts/customers/"
 	var clients: Array = []
 	
-	# Get all files from the folder
-	var dir = DirAccess.open(folder_path)
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		
-		while file_name != "":
-			if file_name.ends_with(".tres"):
-				var resource = load(folder_path + file_name)
-				clients.append(resource)
-			
-			file_name = dir.get_next()
-		
-		dir.list_dir_end()
-	else:
-		print("Failed to open directory: ", folder_path)
+	# Manually list all your .tres files
+	var file_names = [
+		"1.tres",
+		"2.tres",
+		"3.tres",
+		"4.tres",
+		"5.tres",
+		"6.tres",
+		"7.tres",
+		"8.tres",
+		"9.tres",
+		"10.tres",
+		"11.tres",
+		"12.tres",
+		"13.tres",
+		"14.tres",
+		"15.tres",
+		"16.tres",
+		"17.tres",
+		"18.tres",
+		"19.tres",
+		"20.tres",
+		# Add all your files here
+	]
+	
+	for file_name in file_names:
+		var resource = load(folder_path + file_name)
+		if resource:
+			clients.append(resource)
 	
 	for i in range(clients.size()):
 		clean_dict[i] = clients[i]
 	
-	# Randomize the order
 	clients.shuffle()
 	
-	# Create dictionary with numbers as keys
 	for i in range(clients.size()):
 		client_dict[i] = clients[i]
 	
 	print("Loaded ", client_dict.size(), " clients")
-	for key in client_dict.keys():
-		var customer = client_dict[key]
-		print("%d: Name: %s, Insured: %s, Condition: %s, Price: $%d" % [
-		key,
-		customer.name,
-		"Yes" if customer.insured else "No",
-		customer.condition,
-		customer.price
-	])
 
 #func start_customer(customer):
 	#print(client_dict[customer].name)
