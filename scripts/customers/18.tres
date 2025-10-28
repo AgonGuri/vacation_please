@@ -10,5 +10,6 @@ species = "starfish"
 portrait = ExtResource("1_yhy58")
 condition = "caring for her mentally disabled brother"
 price = 30345
+max_payout = 50000
 insured = true
 metadata/_custom_type_script = "uid://gekfvna5qo3b"
