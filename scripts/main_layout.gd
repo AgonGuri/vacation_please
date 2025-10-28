@@ -3,11 +3,20 @@ extends Node2D
 
 @onready var catalogue = $catalogue
 
+var current_customer
+
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	var instance = load("res://scenes/AI Message.tscn").instantiate()
 	add_child(instance)
+	new_customer()
 	pass # Replace with function body.
+
+func new_customer():
+	Global.next_customer()
+	current_customer = Global.client_dict[Global.current_customer]
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
