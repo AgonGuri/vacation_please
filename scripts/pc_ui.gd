@@ -10,6 +10,7 @@ extends Control
 #var conditions_list = ["broken nose", "dirrahea", "eye infection", "uncotrollable laughing"]
 var customer_resource: Array[CustomerResource] = []
 var current_customer: CustomerResource
+signal money_sent(customer: CustomerResource, amount: float)
 
 @onready var animals = $NinePatchRect/Panel/NameList/Names
 @onready var namesButton = $NinePatchRect/Panel/NamesButton
@@ -111,7 +112,7 @@ func on_done_button_pressed():
 		
 	var amount = float(moneyAmount)
 	if current_customer:
-		emit_signal("ok u gib money", current_customer, amount)
+		emit_signal("money_sent", current_customer, amount)
 	else:
 		push_warning("No customer found :(")
 	homescreen()
