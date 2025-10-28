@@ -41,14 +41,14 @@ func generate_text():
 	else:
 		print("Error: client_is_lying not found/set")
 	
-	await get_tree().process_frame
+	#await get_tree().process_frame
 	
 	print("About to start talking")
 	ai_chat.say("start talking")
 
 func delete_text():
-	overview.text("")
-	ai_text.text("")
+	overview.text = ""
+	ai_text.text = ""
 
 
 func _on_nobody_who_chat_response_updated(new_token: String) -> void:

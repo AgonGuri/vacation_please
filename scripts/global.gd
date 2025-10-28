@@ -1,7 +1,7 @@
 extends Node
 
-@export var current_customer = 0
-@export var last_customer = 12
+@export var current_customer = -1
+@export var last_customer = 3
 var client_dict = {} #dictionary for clients showing up(same as below but randomized)
 var clean_dict = {} #dictionary for buttons on pc
 var scene
