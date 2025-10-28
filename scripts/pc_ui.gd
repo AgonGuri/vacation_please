@@ -140,7 +140,7 @@ func show_document(customer: CustomerResource):
 	customer_name.text = "Name: %s" % customer.name
 	customer_species.text = "Species: %s" % customer.species
 	customer_insurance_status.text = "Has insurance: %s" % ("Yes" if customer.insured else "No")
-	money_input.text = "Amount in $" 
+	money_input.text = "" 
 	
 #go back button
 func on_back_button_pressed():

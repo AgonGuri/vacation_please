@@ -20,7 +20,12 @@ border_width_bottom = 2
 border_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pgwb"]
-bg_color = Color(0, 0.05592153, 0.0515001, 0.08235294)
+bg_color = Color(0.6509804, 0.7058824, 0.6431373, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.13319638, 0.13319641, 0.1331963, 1)
 corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6r30"]
@@ -129,11 +134,20 @@ offset_bottom = 74.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Name:"
 
+[node name="MoneyAmount" type="Label" parent="NinePatchRect/DocumentPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 137.0
+offset_right = 139.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Money amount"
+
 [node name="CustomerInsuranceStatus" type="Label" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
-offset_left = 17.0
+offset_left = 16.0
 offset_top = 108.0
-offset_right = 150.0
+offset_right = 149.0
 offset_bottom = 131.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Has insurance:"
@@ -150,16 +164,15 @@ text = "Species:"
 [node name="MoneyInput" type="LineEdit" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
 offset_left = 15.0
-offset_top = 172.0
+offset_top = 166.0
 offset_right = 259.0
-offset_bottom = 215.0
-theme_override_colors/font_color = Color(0.581033, 0.58103293, 0.5810329, 1)
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0.27881077, 0.0006951043, 0.6842053, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0.4817894, 0.48178953, 0.4817894, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_2pgwb")
-text = " Enter amount"
 placeholder_text = "Amount"
-max_length = 13
+max_length = 6
 
 [node name="DoneButton" type="Button" parent="NinePatchRect/DocumentPanel"]
 layout_mode = 0
