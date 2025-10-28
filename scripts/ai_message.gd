@@ -34,7 +34,7 @@ func generate_text():
 	
 	if client_is_lying == false:
 		print("setting truthful prompt")
-		ai_chat.system_prompt = "In this world everyone is an animal. Your name is " + client_name + ". You are talking to a health insurance representative, trying to get a payout. You say you suffered from " + client_condition + " and it cost you " + str(client_price) + " Lovecoints (a fictional currency). Your speech should be in coherent, formal sentences, and around 100 words. Never send anything other than literal, direct speech (for example: never describe your actions in **)."
+		ai_chat.system_prompt = "In this world everyone is an animal. Your name is " + client_name + ". You are talking to a health insurance representative, trying to get a payout. You say you suffered from " + client_condition + " and it cost you " + str(client_price) + " Lovecoins (a fictional currency). Your speech should be in coherent, formal sentences, and around 100 words. Never send anything other than literal, direct speech (for example: never describe your actions in **)."
 	elif client_is_lying == true:
 		print("setting lying prompt")
 		ai_chat.system_prompt = "In this world everyone is an animal. You are talking to a health insurance representative and want to get a payout. Your speak in coherent, formal sentences. Use about 100 words. However, you are lying about " + client_lie + ". You say your name is " + client_name + ". You request a payout of " + str(client_price) + " Lovecoins (a fictional currency) for " + client_condition + ". If you are lying about your condition give the reader a hint to figure it out (hidden in the text). Never send anything other than literal, direct speech (for example: never describe your actions in **)."

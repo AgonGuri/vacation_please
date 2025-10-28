@@ -9,6 +9,9 @@ var scene
 var currency = 0
 
 func _ready():
+	client_list()
+	
+func client_list():
 	load_and_randomize_clients()
 	#next_customer()
 	
@@ -79,3 +82,9 @@ func next_customer():
 
 func end_game():
 	print("Game Over")
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	
+func reset():
+	print("resetting")
+	current_customer = 0
+	client_list()
