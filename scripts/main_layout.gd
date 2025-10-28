@@ -92,6 +92,8 @@ func _on_main_ui_money_sent(customer: CustomerResource, amount: float) -> void:
 				print("sussed out")
 				boss_text = "We aint giving money to liars! Great that you sused that one out! Here is a little reward"
 				Global.currency += LYER_REWARD
+				show_boss(boss_text)
+				return
 			#50% chance of lie gets out
 			elif randf() < LIE_COMING_OUT_PERCENTAGE:
 				print("lie came out and we pay")
@@ -101,7 +103,8 @@ func _on_main_ui_money_sent(customer: CustomerResource, amount: float) -> void:
 		print("lie didnt come out")
 		#handeled customer well
 		if amount == customer.max_payout : 
-			Global.currency += commission(amount)
+			if !customer.is_lying:
+				Global.currency += commission(amount)
 			print("customer handled well")
 			boss_text = "Customer well handeled, heres the commission"
 			#pay out of own pocket
@@ -120,9 +123,10 @@ func _on_main_ui_money_sent(customer: CustomerResource, amount: float) -> void:
 				if randf() < (customer.max_payout - amount) / customer.max_payout:
 					if customer.is_lying:
 						boss_text = "That liar tried to sue you, but the legal department handeled that, dont worry."
-					print("sued")
-					#rest of what they could have gotten + court cost
-					boss_text = ("you got sued and have to pay: %s" % (customer.max_payout - amount + COURT_COST))
-					Global.currency -= customer.max_payout - amount + COURT_COST
+					else:
+						print("sued")
+						#rest of what they could have gotten + court cost
+						boss_text = ("you got sued and have to pay: %s" % (customer.max_payout - amount + COURT_COST))
+						Global.currency -= customer.max_payout - amount + COURT_COST
 	#showing the boss:
 	show_boss(boss_text)
