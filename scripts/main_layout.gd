@@ -26,6 +26,8 @@ func new_customer():
 	instance.generate_text()
 
 func show_boss(text):
+	$AnimationPlayer.play("customer_leave")
+	await get_tree().create_timer(1.0).timeout
 	$AnimalSprite.texture = boss_portrait
 	$AnimationPlayer.play("customer_new")
 	instance.boss_text(text)
@@ -44,6 +46,8 @@ func _input(event: InputEvent) -> void:
 	
 	#get rid of boss and load new customer
 	if is_boss && event.is_pressed():
+		$AnimationPlayer.play("customer_leave")
+		await get_tree().create_timer(1.0).timeout
 		is_boss = false
 		new_customer()
 
