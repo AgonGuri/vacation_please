@@ -43,6 +43,7 @@ func _input(event: InputEvent) -> void:
 	if catalogue.openCatalogue.visible == true && event.is_pressed():
 		catalogue.closeCanvas()
 	if is_boss && event.is_pressed():
+		is_boss = false
 		new_customer()
 
 #-------------------------------------------------------------------------------
