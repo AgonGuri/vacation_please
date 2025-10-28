@@ -5,6 +5,8 @@ extends Node2D
 
 var current_customer
 var instance
+var boss_portrait = load("res://Assets/animalsprites/boss.png")
+var is_boss= false
 
 # Called when the node enters the scene tree for the first time.
 
@@ -22,8 +24,15 @@ func new_customer():
 	$AnimationPlayer.play("customer_new")
 	instance.delete_text()
 	instance.generate_text()
-	pass
 
+func show_boss(text):
+	$AnimalSprite.texture = boss_portrait
+	$AnimationPlayer.play("customer_new")
+	#instance.stahp()
+	instance.delete_text()
+	print(text)
+	await get_tree().create_timer(1.0).timeout
+	is_boss = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -33,10 +42,12 @@ func _input(event: InputEvent) -> void:
 	#turn off the catalogue if it is open
 	if catalogue.openCatalogue.visible == true && event.is_pressed():
 		catalogue.closeCanvas()
-		
+	if is_boss && event.is_pressed():
+		new_customer()
 
-
+#-------------------------------------------------------------------------------
 # calculation outcomes
+#-------------------------------------------------------------------------------
 var COMMISSION_PERCENTAGE = 0.15
 var BONUS_PERCENTAGE = 0.4
 var COURT_COST = 2000
@@ -91,4 +102,5 @@ func _on_main_ui_money_sent(customer: CustomerResource, amount: float) -> void:
 					#rest of what they could have gotten + court cost
 					boss_text = ("you got sued and have to pay: %s" % (customer.max_payout - amount + COURT_COST))
 					Global.currency -= customer.max_payout - amount + COURT_COST
-	new_customer()
+	#showing the boss:
+	show_boss(boss_text)
