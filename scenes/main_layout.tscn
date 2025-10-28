@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://3j0i8617piqy"]
+[gd_scene load_steps=16 format=3 uid="uid://3j0i8617piqy"]
 
 [ext_resource type="Texture2D" uid="uid://b7y85vdrbga1v" path="res://Assets/animalsprites/mole.png" id="1_4lhwc"]
 [ext_resource type="Texture2D" uid="uid://by6ojocygd2dp" path="res://Assets/layout/frony_layout.png" id="1_7rr3c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bbqlr045k8se6" path="res://scripts/catalogue.gd" id="5_f6vs1"]
 [ext_resource type="PackedScene" path="res://scenes/currency.tscn" id="6_urhyu"]
 [ext_resource type="PackedScene" uid="uid://boepidkh0v6vi" path="res://scenes/pc_ui.tscn" id="8_4m2lt"]
+[ext_resource type="AudioStream" uid="uid://c64bqfrfk2g4e" path="res://Assets/sad.mp3" id="11_6flo5"]
 
 [sub_resource type="Animation" id="Animation_tnbgg"]
 length = 0.001
@@ -145,5 +146,10 @@ texture = ExtResource("4_4jnhx")
 libraries = {
 &"": SubResource("AnimationLibrary_7l78i")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_6flo5")
+volume_db = -12.218
+autoplay = true
 
 [connection signal="money_sent" from="MainUI" to="." method="_on_main_ui_money_sent"]
