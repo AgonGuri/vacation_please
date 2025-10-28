@@ -32,3 +32,7 @@ addons/nobodywho/nobodywho.gdextension
 addons/nobodywho/nobodywho.gdextension.uid
 addons/nobodywho/~nobodywho-godot-x86_64-pc-windows-msvc-release.dll
 gemma-2-2b-it-Q4_K_M.gguf
+Assets/animalsprites/boss.png
+Assets/animalsprites/boss.png.import
+Assets/layout/last_scene.jpg
+Assets/layout/last_scene.jpg.import
