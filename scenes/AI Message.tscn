@@ -7,16 +7,20 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4aiux"]
 content_margin_left = 25.0
 content_margin_top = 60.0
-content_margin_right = 1.0
-bg_color = Color(0.87459433, 0.89947957, 0.8709615, 1)
+content_margin_right = 25.0
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 7
-border_width_top = 35
+border_width_top = 7
 border_width_right = 7
 border_width_bottom = 7
 border_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7iwd"]
-bg_color = Color(0.34117648, 0.0627451, 0.8235294, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [node name="AiMessage" type="Control"]
 layout_mode = 3
@@ -59,13 +63,13 @@ scroll_following = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 8.0
-offset_right = 519.0
-offset_bottom = 35.0
+offset_left = 171.0
+offset_top = 18.0
+offset_right = 374.0
+offset_bottom = 45.0
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_s7iwd")
-text = "    System message - overview"
+text = "    Customer overview"
 
 [connection signal="response_updated" from="NobodyWhoChat" to="." method="_on_nobody_who_chat_response_updated"]
