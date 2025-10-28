@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://boepidkh0v6vi"]
+[gd_scene load_steps=12 format=3 uid="uid://boepidkh0v6vi"]
 
 [ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scripts/pc_ui.gd" id="1_gro16"]
 
@@ -30,13 +30,6 @@ border_color = Color(0.025363794, 0.025363805, 0.025363766, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df1xv"]
 bg_color = Color(1, 1, 1, 1)
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1cg7"]
-bg_color = Color(1, 1, 1, 1)
-draw_center = false
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.33333334, 0.33333334, 0.33333334, 1)
@@ -169,19 +162,16 @@ offset_right = 367.0
 offset_bottom = 656.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_df1xv")
 
-[node name="NameList" type="VScrollBar" parent="NinePatchRect/Panel"]
+[node name="NameList" type="ScrollContainer" parent="NinePatchRect/Panel"]
 modulate = Color(0.79607844, 1, 1, 1)
 layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 331.0
 offset_bottom = 509.0
-theme_override_styles/scroll = SubResource("StyleBoxFlat_g1cg7")
 
 [node name="Names" type="VBoxContainer" parent="NinePatchRect/Panel/NameList"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 23.0
+layout_mode = 2
 
 [node name="ConditionList" type="VScrollBar" parent="NinePatchRect/Panel"]
 layout_mode = 0

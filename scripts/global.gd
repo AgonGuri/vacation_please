@@ -54,25 +54,28 @@ func load_and_randomize_clients():
 		customer.price
 	])
 
-func new_customer():
-	if current_customer == last_customer:
-		end_game()
-	else:
-		current_customer += 1
-		start_customer(current_customer)
-		
-	
-func start_customer(customer):
-	print(client_dict[customer].name)
-	#play animation and sound
-	#Load UI with relevant information
-	#Load corresponding LLM Text
-	pass
+#func new_customer():
+	#if current_customer == last_customer:
+		#end_game()
+	#else:
+		#current_customer += 1
+		#start_customer(current_customer)
+		#
+	#
+#func start_customer(customer):
+	#print(client_dict[customer].name)
+	##play animation and sound
+	##Load UI with relevant information
+	##Load corresponding LLM Text
+	#pass
+func get_all_customers_ordered() -> Array:
+	return clean_dict.values()
+
 func get_customer(index: int):
 	return client_dict.get(index, null)
 
 func get_all_customers() -> Array:
-	return clean_dict.values()
+	return client_dict.values()
 
 func next_customer():
 	if current_customer >= last_customer:
