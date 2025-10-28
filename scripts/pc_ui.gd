@@ -71,6 +71,8 @@ func populate_customer_text():
 		var focus_style = StyleBoxFlat.new()
 		focus_style.bg_color = Color.BLUE
 		button.add_theme_stylebox_override("focus", focus_style)
+		
+		button.size_flags_vertical = Control.SIZE_EXPAND_FILL
 		animals.add_child(button)
 
 #when you click on the names' button it does some ui stuff

@@ -95,7 +95,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_anaay")
 text = "    XP User Interface [information about customers]"
 
 [node name="DocumentPanel" type="Panel" parent="NinePatchRect"]
-visible = false
 layout_mode = 0
 offset_left = 365.0
 offset_top = 146.0
