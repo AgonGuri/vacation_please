@@ -31,10 +31,13 @@ func _input(event: InputEvent) -> void:
 	if catalogue.openCatalogue.visible == true && event.is_pressed():
 		catalogue.closeCanvas()
 		
-		# calculation outcomes
+
+
+# calculation outcomes
 var COMMISSION_PERCENTAGE = 0.15
 var BONUS_PERCENTAGE = 0.4
 var COURT_COST = 2000
+var LYER_REWARD = 10
 
 func commission(money):
 	return money * COMMISSION_PERCENTAGE
@@ -47,9 +50,11 @@ func _on_main_ui_money_sent(customer: CustomerResource, amount: float) -> void:
 	if customer.is_lying: #if hes lying
 		if randf() < .5:	#50% chance of max payout being 0 meaning lie gets out
 			if amount > 0 :
-				Global.currency -= amount
+				Global.currency -= amount #we pay everything
 				print("boss: you pay for that liar!")
-			else:print("we aint giving money to liars!")
+			else:
+				print("we aint giving money to liars! Great that you sused that one out! Here is a little reward")
+				Global.currency += LYER_REWARD
 		else: print("*that lie didt get out, you got lucky*")
 	if amount == customer.max_payout : #handeled customer well
 		Global.currency += commission(amount)
