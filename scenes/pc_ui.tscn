@@ -1,10 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://boepidkh0v6vi"]
+[gd_scene load_steps=14 format=3 uid="uid://boepidkh0v6vi"]
 
 [ext_resource type="Script" uid="uid://buqdbalrqiqqs" path="res://scripts/pc_ui.gd" id="1_gro16"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gro16"]
-bg_color = Color(0.87058824, 0.8862745, 0.9019608, 1)
-border_color = Color(0, 0, 0, 1)
+bg_color = Color(0.6521786, 0.7062656, 0.6424379, 1)
+border_width_left = 12
+border_width_top = 25
+border_width_right = 12
+border_width_bottom = 10
+border_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anaay"]
+bg_color = Color(0.34178126, 0.064611875, 0.8235749, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yj1s0"]
 bg_color = Color(1, 1, 1, 1)
@@ -77,20 +84,21 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_gro16")
 
 [node name="Information" type="Label" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 109.0
-offset_right = 424.0
-offset_bottom = 135.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 11.0
+offset_top = 25.0
+offset_right = 682.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_font_sizes/font_size = 16
-text = "XP User Interface [information about customers]"
+theme_override_styles/normal = SubResource("StyleBoxFlat_anaay")
+text = "    XP User Interface [information about customers]"
 
 [node name="DocumentPanel" type="Panel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 372.0
+offset_left = 365.0
 offset_top = 146.0
-offset_right = 682.0
+offset_right = 675.0
 offset_bottom = 658.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_yj1s0")
 
@@ -144,26 +152,26 @@ text = "Done"
 
 [node name="Panel" type="Panel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 144.0
-offset_right = 367.0
-offset_bottom = 656.0
+offset_left = 23.0
+offset_top = 146.0
+offset_right = 360.0
+offset_bottom = 658.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_df1xv")
 
 [node name="NameList" type="ScrollContainer" parent="NinePatchRect/Panel"]
 modulate = Color(0.79607844, 1, 1, 1)
 layout_mode = 0
-offset_left = 11.0
-offset_top = 1.0
-offset_right = 322.0
-offset_bottom = 509.0
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 320.0
+offset_bottom = 511.0
 
 [node name="Names" type="VBoxContainer" parent="NinePatchRect/Panel/NameList"]
 layout_mode = 2
 
 [node name="ConditionList" type="VScrollBar" parent="NinePatchRect/Panel"]
 layout_mode = 0
-offset_right = 407.0
+offset_right = 391.0
 offset_bottom = 513.0
 theme_override_styles/scroll = SubResource("StyleBoxFlat_h7g8x")
 
@@ -171,12 +179,12 @@ theme_override_styles/scroll = SubResource("StyleBoxFlat_h7g8x")
 layout_mode = 0
 offset_left = 11.0
 offset_top = 20.0
-offset_right = 396.0
+offset_right = 386.0
 offset_bottom = 508.0
 
 [node name="ConditionsButton" type="Button" parent="NinePatchRect/Panel"]
 layout_mode = 0
-offset_left = 1.0
+offset_left = 5.0
 offset_top = 46.0
 offset_right = 328.0
 offset_bottom = 72.0
@@ -192,7 +200,7 @@ alignment = 0
 
 [node name="NamesButton" type="Button" parent="NinePatchRect/Panel"]
 layout_mode = 0
-offset_left = 2.0
+offset_left = 6.0
 offset_top = 16.0
 offset_right = 328.0
 offset_bottom = 44.0
@@ -208,10 +216,10 @@ alignment = 0
 
 [node name="Button" type="Button" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 587.0
-offset_top = 98.0
-offset_right = 681.0
-offset_bottom = 136.0
+offset_left = 23.0
+offset_top = 109.0
+offset_right = 117.0
+offset_bottom = 141.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_gthla")
 text = "Go Back"
