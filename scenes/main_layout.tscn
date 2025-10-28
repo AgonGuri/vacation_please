@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://bbqlr045k8se6" path="res://scripts/catalogue.gd" id="5_f6vs1"]
 [ext_resource type="PackedScene" uid="uid://drbjmsweeri05" path="res://scenes/currency.tscn" id="6_urhyu"]
 [ext_resource type="PackedScene" uid="uid://boepidkh0v6vi" path="res://scenes/pc_ui.tscn" id="8_4m2lt"]
-[ext_resource type="AudioStream" uid="uid://c64bqfrfk2g4e" path="res://Assets/sad.mp3" id="11_6flo5"]
+[ext_resource type="AudioStream" uid="uid://c64bqfrfk2g4e" path="res://assets/sad.mp3" id="11_6flo5"]
 
 [sub_resource type="Animation" id="Animation_tnbgg"]
 length = 0.001
