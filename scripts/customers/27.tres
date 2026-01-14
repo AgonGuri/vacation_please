@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://5xq0ijxkyimk"]
+
+[ext_resource type="Texture2D" uid="uid://g58t8xe0u5px" path="res://Assets/animalsprites/giraffe.png" id="1_uelxq"]
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="2_npfdt"]
+
+[resource]
+script = ExtResource("2_npfdt")
+name = "Jesse Yellowraf"
+species = "giraffe"
+portrait = ExtResource("1_uelxq")
+condition = "Very bad pain"
+price = 750
+max_payout = 750
+insured = true
+is_lying = true
+lie = "Condition"
+text = "Yo man, So I got operated on like a year or two ago, and they gave me the good stuff if you know what i'm talkin' about. Buuut it ran out you know? But i'm still in really bad pain right? Like, really bad trust me bro. I think it's from some parasite or something, honestly not that important, but could you just hook me up with some of the stuff I got at the hospital? Or at least gimme the money for it?"
+metadata/_custom_type_script = "uid://gekfvna5qo3b"

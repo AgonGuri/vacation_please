@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://ds5fqyr0r8xv1"]
+
+[ext_resource type="Texture2D" uid="uid://bc12nb3k1l0hr" path="res://Assets/animalsprites/bear.png" id="1_7kefo"]
+[ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="2_e8263"]
+
+[resource]
+script = ExtResource("2_e8263")
+name = "'hillip Thweed"
+species = "bear"
+portrait = ExtResource("1_7kefo")
+condition = "Missing Teeth"
+price = 2000
+max_payout = 3700
+insured = true
+metadata/_custom_type_script = "uid://gekfvna5qo3b"

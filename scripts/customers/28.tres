@@ -1,16 +1,17 @@
 [gd_resource type="Resource" script_class="CustomerResource" load_steps=3 format=3 uid="uid://b3hcejcudwt1a"]
 
-[ext_resource type="Texture2D" uid="uid://dyk2ghtfxk8tq" path="res://Assets/animalsprites/cat.png" id="1_2xwne"]
+[ext_resource type="Texture2D" uid="uid://b3drkgkdpekr5" path="res://Assets/animalsprites/u_know_who_this.png" id="1_2xwne"]
 [ext_resource type="Script" uid="uid://gekfvna5qo3b" path="res://scripts/customer_resource.gd" id="2_6j0gu"]
 
 [resource]
 script = ExtResource("2_6j0gu")
-name = "Princess Moo"
-species = "cat"
+name = "Mario"
+species = "fox"
 portrait = ExtResource("1_2xwne")
-condition = "Blind"
-price = 4500
-max_payout = 5000
-insured = true
-text = "Hi, glad I made it here! See just got blind because of my cataract and I just got a bill from the hospital? It is because they failed my laser surgery, plus I am insured and this should be covered by the insurance! I hope this is just a dumb misunderstanding because I will not pay someone for making me blind. If anything, I will sue this damn hospital if the follow up surgery does not help. "
+condition = "Snake Poisoning"
+price = 10000
+max_payout = 10000
+is_lying = true
+lie = "Insurance"
+text = "I recently got into a... disagreement... with a certain snake, completely unrelated to you or anyone you know, I swear. The disagreement went... favourably for me and it was for the betterment of society, however, I sustained some damage affecting not only my staggeringly good looks. I have been on the run for some time now, and I would ask you not to disclose my presence here to the authorities, if you catch my meaning. But it has been costly to take care of this injury, so I am asking for reimbursement if possible."
 metadata/_custom_type_script = "uid://gekfvna5qo3b"
